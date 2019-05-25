@@ -1,0 +1,75 @@
+
+<h1 mat-dialog-title> Nouveau QCM </h1>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+	<div class="questionModif">
+		<h3> Question : </h3>
+		<mat-form-field floatLabel="always">
+	        <mat-label>Identifiant de la question</mat-label>
+	        <textarea matInput [(ngModel)]="q.id"></textarea>
+	    </mat-form-field>
+	    <mat-form-field *ngIf="arrayModif[i]" floatLabel="always">
+          <mat-label>Thème de la question :</mat-label>
+          <input matInput [(ngModel)]="q.theme">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let t of arrayModif" [value]="t">
+              {{t}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+		<p>Prévisualisation de la question (Latex) :</p>
+		<mathjax [content]='q.question'></mathjax>
+		<mat-form-field floatLabel="always">
+	        <mat-label>Modifier la question</mat-label>
+	        <textarea matInput 
+	          cdkTextareaAutosize 
+	          #autosize="cdkTextareaAutosize" 
+	          cdkAutosizeMinRows="2"
+	          cdkAutosizeMaxRows="5"
+	          [(ngModel)]="q.question"></textarea>
+	    </mat-form-field>
+	</div>
+	<mat-divider></mat-divider>
+	<h3> Réponses : </h3>
+	<div *ngFor="let ans of q.answers; let ind = index">
+		<mat-divider></mat-divider>
+		<p>Prévisualisation de la réponse (Latex) :</p>
+		<div class="answerDisplayer">
+	      <h3>{{ind + 1}}.</h3>
+	      <mathjax [content]="ans.answer"></mathjax>
+	      <i *ngIf="ans.correct" class="material-icons answer-correct">
+	        check_circle_outline
+	      </i>
+	      <i *ngIf="!ans.correct" class="material-icons answer-wrong">
+	        highlight_off
+	      </i>
+	    </div>
+		<div class="answerModif">
+	      <mat-form-field floatLabel="always">
+	        <mat-label>Enoncé de la réponse</mat-label>
+	        <textarea matInput 
+	          cdkTextareaAutosize 
+	          #autosize="cdkTextareaAutosize"
+	          cdkAutosizeMinRows="2"
+	          cdkAutosizeMaxRows="5" 
+	          [(ngModel)]="ans.answer"></textarea>
+	      </mat-form-field>
+	      <mat-checkbox [(ngModel)]="ans.correct">Réponse correcte</mat-checkbox>
+	      <button *ngIf="q.answers.length > 1" mat-raised-button (click)="deleteQuestion(ind)" color="warn">Supprimer cette réponse</button>
+	    </div>
+	    <div class="centeringContent">
+		    <button mat-raised-button (click)="addQuestion()" color="basic">
+		    	<mat-icon>add_box</mat-icon>
+		    </button>
+		</div>
+	</div>
+	<mat-divider></mat-divider>
+	<div class="positionButton">
+		<button mat-raised-button (click)="cancel()" color="basic">Annuler</button>
+		<button mat-raised-button (click)="add()" color="primary">Ajouter</button>
+	</div>
+</mat-dialog-content>
+
+
+
+

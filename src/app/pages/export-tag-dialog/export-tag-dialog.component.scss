@@ -1,0 +1,24 @@
+.scroll {
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+mat-form-field {
+	margin-top: 15px;
+}
+
+mat-checkbox {
+  margin: 5px;
+}
+
+.offsetInput {
+	margin-top: 25px !important;
+}
+
+.positionButton {
+	margin-top: 15px;
+	width: 100% !important;
+	display: flex;
+	justify-content: space-between;
+}

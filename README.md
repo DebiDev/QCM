@@ -1,3 +1,18 @@
+Le but de ce projet est de réaliser une application de gestion de QCM avec importation et exportation de fichier texte écrit en Latex. Cela permet d'améliorer et de faciliter la liaison entre les différentes questions Latex que vous avez et l'utilisation de AMC (Auto-Multiple Choice).
+
+Ce projet est costruit à partir de Angular 7 et Electron 4. 
+
+Electron permet d'encapsuler le projet Angular pour lui donner les capacités d'une application native pour ordinateur grâce à un Main Process qui tourne sous Node.js. Notre application Angular peut alors créer/lire/modifier/supprimer des documents (c'est ce qu'on cherche pour notre Base de donnée en .json) mais aussi utiliser beaucoup d'autres fonctionnalités natives que je n'évoquerais pas ici. 
+
+Pour mieux comprendre, vous pouvez vous rendre ici : https://malcoded.com/posts/angular-desktop-electron
+
+L'application ne marchera pas si vous éxecutez juste un `ng serve`, car Electron ne serait pas inclut. 
+Vous pouvez utiliser la commande `npm run electron` qui lancera l'application après avoir compilé le code.
+Pour déployer le logiciel, exécutez la commande `electron-forge make` (déploie l'application sous l'OS détecté),
+vous trouverez alors l'éxecutable dans le dossier /out/make/$EXECUTABLE
+
+#########################################################################################
+
 # QCM
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
@@ -25,3 +40,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+

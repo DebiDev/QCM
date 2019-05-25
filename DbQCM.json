@@ -1,0 +1,1712 @@
+{
+  "qcm": [
+    {
+      "answers": [
+        {
+          "answer": "pour tout $x, y\\in C$ et tout\n $\\theta\\in[0,1]$, on a\n\n $\\theta x+(1-\\theta)y \\in C$.",
+          "correct": true
+        },
+        {
+          "answer": "pour tout $x, y\\in C$ et tout\n $\\theta\\in R$, on a\n\n $\\theta x+(1-\\theta)y \\in C$.",
+          "correct": false
+        },
+        {
+          "answer": "pour tout $x, y\\in C$ et tout\n $\\theta\\in R_+$, on a\n\n $\\theta x+(1-\\theta)y \\in C$.",
+          "correct": false
+        }
+      ],
+      "id": "DefConvexSet",
+      "isMultiple": true,
+      "question": "Un ensemble $C$ est convexe si et seulement si",
+      "theme": ""
+    },
+    {
+      "answers": [
+        {
+          "answer": "$R_T(f) = T\\sinc(\\pi f T)$",
+          "correct": true
+        },
+        {
+          "answer": "$R_T(f) = \\sinc(\\pi f T)$",
+          "correct": false
+        },
+        {
+          "answer": "$R_T(f) = \\frac{1}{T}\\sinc(\\frac{\\pi f}{T})$",
+          "correct": false
+        },
+        {
+          "answer": "$R_T(f) = \\sinc(\\frac{\\pi f}{T})$",
+          "correct": false
+        },
+        {
+          "answer": "$R_T(f) = e^{\\ic 2 \\pi f T}\\sinc(\\frac{\\pi f}{T})$",
+          "correct": false
+        },
+        {
+          "answer": "$R_T(f) = e^{\\ic 2 \\pi f T}\\indic_{[-T/2,T/2]}(t)$",
+          "correct": false
+        }
+      ],
+      "id": "18-1-s1-TFPorte",
+      "isMultiple": false,
+      "question": "La transformée de Fourier de la fonction $r_T(t) = \\indic_{[-T/2,T/2]}(t)$ est:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$R_T(f) = \\frac{T}{2}\\Big[ \\sinc(\\pi (f-f_0) T) + \\sinc(\\pi (f+f_0) T) \\Big] $",
+          "correct": true
+        },
+        {
+          "answer": "$R_T(f) = \\frac{1}{2T}\\Big[ \\sinc\\left(\\frac{\\pi (f-f_0)}{T}\\right) + \\sinc\\left(\\frac{\\pi (f+f_0)}{T}\\right)\\Big]$",
+          "correct": false
+        },
+        {
+          "answer": "$R_T(f) = \\frac{T}{2}\\Big[ \\sinc(\\pi (f-f_0) T) + \\sinc(\\pi (f+f_0) T) \\Big]\\indic_{[-1/2T,1/2T](f)} $",
+          "correct": false
+        },
+        {
+          "answer": "$R_T(f) = T\\sinc(\\pi (f-f_0)T )$",
+          "correct": false
+        },
+        {
+          "answer": "$R_T(f) = T e^{\\ic 2 \\pi (f-f_0) T} \\sinc(\\pi (f-f_0)T)$",
+          "correct": false
+        }
+      ],
+      "id": "18-2-s1-TFCosTronque",
+      "isMultiple": false,
+      "question": "La transformée de Fourier de la fonction $r_T(t) = \\cos(2\\pi f_0t)\\indic_{[-T/2,T/2]}(t)$ est:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "a pour transformée de Fourier $\\frac{1}{2}\\big( \\delta(f-f_0)+\\delta(f+f_0) \\big)$.",
+          "correct": true
+        },
+        {
+          "answer": "a pour transformée de Fourier $\\frac{1}{2\\ic}\\big( \\delta(f-f_0)-\\delta(f+f_0) \\big)$.",
+          "correct": false
+        },
+        {
+          "answer": "a pour transformée de Fourier $e^{\\ic 2\\pi f_0 t}$.",
+          "correct": false
+        },
+        {
+          "answer": "a pour transformée de Fourier $e^{-\\ic 2\\pi f_0 t}$.",
+          "correct": false
+        }
+      ],
+      "id": "18-3-s1-TFCos",
+      "isMultiple": false,
+      "question": "La fonction $t\\mapsto\\cos(2\\pi f_0t)$:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$x(t_0+a)$",
+          "correct": true
+        },
+        {
+          "answer": "$x(t_0)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(t_0+a)\\delta(t-t_0)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(a)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(t_0-a)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(a-t_0)$",
+          "correct": false
+        }
+      ],
+      "id": "18-4-s1-manipDirac",
+      "isMultiple": false,
+      "question": "Que vaut $\\int_\\RR \\delta(t-t_0)x(t+a) \\; dt$ ? (où $x(t)$ représente un signal continu, $t_0$ et $a$ sont des réels fixés)",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$x(t+t_0)$",
+          "correct": true
+        },
+        {
+          "answer": "$x(t-t_0)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(t_0-t)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(t)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(t_0)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(0)$",
+          "correct": false
+        }
+      ],
+      "id": "18-5-s1-convolDirac",
+      "isMultiple": false,
+      "question": "Que vaut le produit de convolution $\\delta(t+t_0)\\star x(t)$?",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$x(t)e^{\\ic2\\pi f_0t} \\TF X(f-f_0)$",
+          "correct": true
+        },
+        {
+          "answer": "$x(t+t_0) \\TF X(ft_0)$",
+          "correct": false
+        },
+        {
+          "answer": "$x(at) \\TF aX(af)$",
+          "correct": false
+        },
+        {
+          "answer": "si $x(t)$ est à valeurs réelles, alors $X(f)=X(-f)$.",
+          "correct": false
+        },
+        {
+          "answer": "$x(t)\\cos(2\\pi f_0(t) \\TF X(f)\\star\\delta(f-f_0)$",
+          "correct": false
+        }
+      ],
+      "id": "18-6-s1-propTF",
+      "isMultiple": false,
+      "question": "Soit $x(t)$ un signal et $X(f)$ sa transformée de Fourier (ce que l'on note par: $x(t) \\TF X(f)$). Alors:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\gamma_{xy}(\\tau) = \\lim_{T\\to+\\infty} \\frac{1}{2T} \\int_{-T}^T x(t)y(t-\\tau)^* \\;dt$",
+          "correct": true
+        },
+        {
+          "answer": "$\\gamma_{xy}(\\tau) = \\int_{-\\infty}^{\\infty} x(t)y(t-\\tau)^* \\;dt$",
+          "correct": false
+        },
+        {
+          "answer": "$\\gamma_{xy}(\\tau) = \\lim_{T\\to+\\infty} \\frac{1}{2T} \\int_{-T}^T x(t)y(\\tau-t)^* \\;dt$",
+          "correct": false
+        },
+        {
+          "answer": "$\\gamma_{xy}(\\tau) = \\int_{-\\infty}^{\\infty} x(t)y(\\tau-t)^* \\;dt$",
+          "correct": false
+        }
+      ],
+      "id": "18-7-s2-InterCorrelPuisTC",
+      "isMultiple": false,
+      "question": "Quelle est l'expression correcte de la fonction d'intercorrélation de deux signaux $x(t)$ et $y(t)$ temps continu et de puissance finie?",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\gamma_{xy}(\\tau) = \\lim_{T\\to+\\infty} \\frac{1}{2T} \\int_{-T}^T x(t)y(t-\\tau)^* \\;dt$",
+          "correct": false
+        },
+        {
+          "answer": "$\\gamma_{xy}(\\tau) = \\int_{-\\infty}^{\\infty} x(t)y(t-\\tau)^* \\;dt$",
+          "correct": true
+        },
+        {
+          "answer": "$\\gamma_{xy}(\\tau) = \\lim_{T\\to+\\infty} \\frac{1}{2T} \\int_{-T}^T x(t)y(\\tau-t)^* \\;dt$",
+          "correct": false
+        },
+        {
+          "answer": "$\\gamma_{xy}(\\tau) = \\int_{-\\infty}^{\\infty} x(t)y(\\tau-t)^* \\;dt$",
+          "correct": false
+        }
+      ],
+      "id": "18-8-s2-InterCorrelEnergTC",
+      "isMultiple": false,
+      "question": "Quelle est l'expression correcte de la fonction d'intercorrélation de deux signaux $x(t)$ et $y(t)$ temps continu et d'énergie finie?",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "Aucune unité.",
+          "correct": true
+        },
+        {
+          "answer": "En Joules (J).",
+          "correct": false
+        },
+        {
+          "answer": "En kiloJoules (kJ).",
+          "correct": false
+        },
+        {
+          "answer": "En Watts (W).",
+          "correct": false
+        },
+        {
+          "answer": "En Ampères-Volts (AV).",
+          "correct": false
+        },
+        {
+          "answer": "En Ampères-Heure (Ah).",
+          "correct": false
+        }
+      ],
+      "id": "18-9-s2-unitePuissance",
+      "isMultiple": false,
+      "question": "En quelle unité s'exprime la puissance d'un signal $x(t)$ dans le cours de traitement du signal?",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "Aucune unité.",
+          "correct": true
+        },
+        {
+          "answer": "En Joules (J).",
+          "correct": false
+        },
+        {
+          "answer": "En kiloJoules (kJ).",
+          "correct": false
+        },
+        {
+          "answer": "En Watts (W).",
+          "correct": false
+        },
+        {
+          "answer": "En Volt-carré (V2).",
+          "correct": false
+        },
+        {
+          "answer": "En Volts-Ampère par seconde (VA/s).",
+          "correct": false
+        }
+      ],
+      "id": "18-10-s2-uniteEnergie",
+      "isMultiple": false,
+      "question": "En quelle unité s'exprime l'énergie d'un signal $x(t)$ dans le cours de traitement du signal?",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "On a: $\\forall f\\in\\RR \\quad \\Gamma_x(f) = |X(f)|^2$.",
+          "correct": true
+        },
+        {
+          "answer": "On a: $\\forall f\\in\\RR \\quad \\Gamma_x(f) = |X(f)|$.",
+          "correct": false
+        },
+        {
+          "answer": "On a l'égalité: $\\ds \\int_{-\\infty}^\\infty|x(t)|^2\\,dt=\\int_{-\\infty}^\\infty \\Gamma_x(f) \\,df$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\Gamma_x(f)$ est toujours maximal en $0$.",
+          "correct": false
+        }
+      ],
+      "id": "18-11-s2-DSE1",
+      "isMultiple": true,
+      "question": "Soit $x(t)$ un signal déterministe d'énergie finie, $X(f)$ sa transformée de Fourier et $\\Gamma_x(f)$ sa densité spectrale d'énergie.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "L'énergie de $x(t)$ vaut $\\ds \\int_{-\\infty}^\\infty |X(f)|^2 \\,df$.",
+          "correct": true
+        },
+        {
+          "answer": "On a: $\\forall f\\in\\RR \\quad \\Gamma_x(f) = |X(f)|$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_x(f)$ admet toujours une symétrie hermitienne, càd: $\\forall f\\in\\RR \\quad \\Gamma(f)=\\Gamma(-f)^*$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_x(f)$ est toujours maximale en $0$.",
+          "correct": false
+        }
+      ],
+      "id": "18-12-s2-DSE2",
+      "isMultiple": false,
+      "question": "Soit $x(t)$ un signal déterministe d'énergie finie, $X(f)$ sa transformée de Fourier et $\\Gamma_x(f)$ sa densité spectrale d'énergie.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\frac{1}{T}\\geq 2B$",
+          "correct": true
+        },
+        {
+          "answer": "$\\frac{1}{T}\\geq B$",
+          "correct": false
+        },
+        {
+          "answer": "$T\\geq 2B$",
+          "correct": false
+        },
+        {
+          "answer": "$T\\geq B$",
+          "correct": false
+        },
+        {
+          "answer": "$2T\\geq B$",
+          "correct": false
+        },
+        {
+          "answer": "$\\frac{2}{T}\\geq B$",
+          "correct": false
+        },
+        {
+          "answer": "$2T \\geq \\frac{1}{B}$",
+          "correct": false
+        },
+        {
+          "answer": "$\\frac{1}{B}\\geq T$",
+          "correct": false
+        },
+        {
+          "answer": "$B\\geq 2T$",
+          "correct": false
+        },
+        {
+          "answer": "$B\\geq T$",
+          "correct": false
+        },
+        {
+          "answer": "$2B\\geq T$",
+          "correct": false
+        },
+        {
+          "answer": "$\\frac{2}{B}\\geq T$",
+          "correct": false
+        }
+      ],
+      "id": "18-13-s3-ThShannon",
+      "isMultiple": false,
+      "question": "Pour qu'un signal à bande limité $[-B,B]$ soit entièrement défini par ses échantillons $x(nT)$, la condition de Shannon-Nyquist indique qu'il faut que:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\frac{1}{T}\\geq 2B$",
+          "correct": true
+        },
+        {
+          "answer": "$\\frac{1}{T}\\geq B$",
+          "correct": false
+        },
+        {
+          "answer": "$T\\geq 2B$",
+          "correct": false
+        },
+        {
+          "answer": "$T\\geq B$",
+          "correct": false
+        },
+        {
+          "answer": "$2T\\geq B$",
+          "correct": false
+        },
+        {
+          "answer": "$\\frac{2}{T}\\geq B$",
+          "correct": false
+        },
+        {
+          "answer": "$2T \\geq \\frac{1}{B}$",
+          "correct": false
+        },
+        {
+          "answer": "$\\frac{1}{B}\\geq T$",
+          "correct": false
+        },
+        {
+          "answer": "$B\\geq 2T$",
+          "correct": false
+        },
+        {
+          "answer": "$B\\geq T$",
+          "correct": false
+        },
+        {
+          "answer": "$2B\\geq T$",
+          "correct": false
+        },
+        {
+          "answer": "$\\frac{2}{B}\\geq T$",
+          "correct": false
+        }
+      ],
+      "id": "18-13-s3-ThShannon",
+      "isMultiple": false,
+      "question": "Pour qu'un signal à bande limité $[-B,B]$ soit entièrement défini par ses échantillons $x(nT)$, la condition de Shannon-Nyquist indique qu'il faut que:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "La condition d'échantillonnage de Shannon est respectée.",
+          "correct": false
+        },
+        {
+          "answer": "La condition d'échantillonnage de Shannon n'est pas respectée. Il y a repliement de spectre et une raie est repliée à 20Hz.",
+          "correct": false
+        },
+        {
+          "answer": "La condition d'échantillonnage de Shannon n'est pas respectée. Il y a repliement de spectre et une raie est repliée à 18Hz.",
+          "correct": true
+        },
+        {
+          "answer": "La transformée de Fourier à temps discret du signal échantillonné n'est pas définie car la condition d'échantillonnage n'est pas respectée.",
+          "correct": false
+        }
+      ],
+      "id": "18-14-s3-appli1Shannon",
+      "isMultiple": false,
+      "question": "Un signal sinusoïdal pur de fréquence 418Hz est échantillonné. La durée entre deux échantillons est de 20ms.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "La condition d'échantillonnage de Shannon n'est pas respectée. Il y a repliement de spectre et il existe une raie repliée à 1865Hz.",
+          "correct": true
+        },
+        {
+          "answer": "La condition d'échantillonnage de Shannon n'est pas respectée. Il y a repliement de spectre et il existe une raie repliée à 1135Hz.",
+          "correct": false
+        },
+        {
+          "answer": "La condition d'échantillonnage de Shannon n'est pas respectée. Il y a repliement de spectre et il existe une raie repliée à 865Hz.",
+          "correct": false
+        },
+        {
+          "answer": "La condition d'échantillonnage de Shannon est respectée.",
+          "correct": false
+        }
+      ],
+      "id": "18-15-s3-appli2Shannon",
+      "isMultiple": false,
+      "question": "Un signal sinuso{\\\"\\i}dal pur de fréquence 4135Hz est échantillonné. La durée entre deux échantillons consécutifs est de 0.5ms.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "Les signaux $(s_n(t))_{n\\in\\ZZ}$ sont une base orthonormée de tous les signaux d'énergie finie.",
+          "correct": false
+        },
+        {
+          "answer": "Les signaux $(s_n(t))_{n\\in\\ZZ}$ sont une base orthonormée des signaux $x(t)$ d'énergie finie et tels que leur transformée de Fourier vérifie $X(f)=0$ pour $f\\notin[-1/2T,1/2T]$.",
+          "correct": true
+        },
+        {
+          "answer": "Les signaux $(s_n(t))_{n\\in\\ZZ}$ sont une base orthonormée des signaux $x(t)$ d'énergie finie et tels que $x(t)=0$ pour $t\\notin[-T/2,T/2]$.",
+          "correct": false
+        },
+        {
+          "answer": "Les signaux $(s_n(t))_{n\\in\\ZZ}$ sont une base orthonormée des signaux $x(t)$ d'énergie finie et tels que $x(t)=0$ pour $t\\notin[-1/2T,1/2T]$.",
+          "correct": false
+        }
+      ],
+      "id": "18-16-s3-familleSinc",
+      "isMultiple": false,
+      "question": "Considérons la famille de signaux d'énergie finie $(s_n(t))_{n\\in\\ZZ}$ définie par",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\hat{x}(t) = \\sum_{n\\in\\ZZ}\\alpha_n s_n(t)$ avec $\\alpha_n = \\int_\\RR x(t)s_n(t)^*\\;dt$ (sans autre hypothèse sur $x(t)$).",
+          "correct": true
+        },
+        {
+          "answer": "Si $x(t)$ est à bande limitée $[-1/2T,1/2T]$, alors $\\hat{x}(t) = \\sum_{n\\in\\ZZ} x(nT) s_n(t)$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\hat{x}(t) = \\sum_{n\\in\\ZZ} x(nT) s_n(t)$ (sans autre hypothèse sur $x(t)$).",
+          "correct": false
+        },
+        {
+          "answer": "On a $x(nT) = \\int_\\RR x(t)s_n(t)^*\\;dt$ (sans autre hypothèse sur $x(t)$).",
+          "correct": false
+        }
+      ],
+      "id": "18-17-s3-SincProjection",
+      "isMultiple": true,
+      "question": "Considérons la famille de signaux d'énergie finie $(s_n(t))_{n\\in\\ZZ}$ définie par",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "est $\\CC$ tout entier, sauf pour quelques cas particuliers.",
+          "correct": false
+        },
+        {
+          "answer": "n'est pas fondamental car les filtres et signaux que l'on considère sont souvent rationnels et n'ont donc qu'un nombre fini de p{\\^o}les.",
+          "correct": false
+        },
+        {
+          "answer": "est important, car deux fonctions de la variable complexe $z$ ayant la \\emph{m{\\^e}me} expression mais définies sur des domaines de convergence distincts peuvent {\\^e}tre les transformées de deux signaux à temps discret distincts.",
+          "correct": true
+        },
+        {
+          "answer": "doit contenir le cercle unité pour que le signal $(x_n)_{n\\in\\ZZ}$ existe.",
+          "correct": false
+        }
+      ],
+      "id": "18-20-s4-Tz-1",
+      "isMultiple": false,
+      "question": "Le domaine de convergence de la transformée en $z$ d'un signal $(x_n)_{n\\in\\ZZ}$ à temps discret:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "donne une indication sur l'inversibilité de la transformée en $z$: le cercle unité doit en effet appartenir au domaine de convergence.",
+          "correct": false
+        },
+        {
+          "answer": "est vide sauf pour des signaux de durée finie.",
+          "correct": false
+        },
+        {
+          "answer": "n'a aucun intér{\\^e}t puisque seule l'expression de la transformée en z nous intéresse.",
+          "correct": false
+        },
+        {
+          "answer": "est important car une m{\\^e}me fonction de la variable complexe $z$ considérée sur des domaines de convergence distincts peut {\\^e}tre la transformée en $z$ de deux signaux à temps discret distincts.",
+          "correct": true
+        }
+      ],
+      "id": "18-21-s4-Tz-2",
+      "isMultiple": false,
+      "question": "Le domaine de convergence de la transformée en $z$ d'un signal $x_n,n\\in\\ZZ$ à temps discret:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "le signal $y_n$ a ses hautes fréquences et basses fréquences inversées par rapport à $x_n$.",
+          "correct": true
+        },
+        {
+          "answer": "on a $y_n = x_ne^{+\\ic\\pi f n}$ d'après la propriété de modulation de la transformée de Fourier temps discret.",
+          "correct": true
+        },
+        {
+          "answer": "la translation de $1/2$ dans le domaine fréquentiel décale les instants d'échantillonnage d'une demi-période d'échantillonnage.",
+          "correct": false
+        },
+        {
+          "answer": "comme le signal $x_n$ est à temps discret, un décalage de $1/2$ des fréquences n'est pas possible et le signal $y_n$ n'existe donc pas.",
+          "correct": false
+        }
+      ],
+      "id": "18-18-s4-Translat1/2SpectreNum",
+      "isMultiple": true,
+      "question": "Soit $x_n,n\\in\\ZZ$ un signal numérique à valeurs réelles de transformée de Fourier temps discret $X(f)$. Si l'on considère le signal $y_n,n\\in\\ZZ$ de transformée de Fourier $Y(f)=X(f+\\frac{1}{2})$, on peut dire:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "le signal $y_n$ a ses hautes fréquences et basses fréquences inversées par rapport à $x_n$.",
+          "correct": true
+        },
+        {
+          "answer": "d'après la propriété de modulation de la transformée de Fourier, $Y(f)=X(f+\\frac{1}{2})$.",
+          "correct": true
+        },
+        {
+          "answer": "d'après la propriété de modulation de la transformée de Fourier, $Y(f)=X(f+1)$.",
+          "correct": false
+        },
+        {
+          "answer": "le signal $y_n$ n'admet pas de transformée de Fourier à temps discret.",
+          "correct": false
+        }
+      ],
+      "id": "18-19-s4-(-1)**nxn",
+      "isMultiple": true,
+      "question": "Soit $x_n,n\\in\\ZZ$ un signal numérique à valeurs réelles de transformée de Fourier temps discret $X(f)$ et $y_n=(-1)^nx_n$ de transformée de Fourier à temps discret $Y(f)$.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "est un algorithme rapide basé sur les propriétés fondamentales de la transformée de Fourier (linéarité, changement de variables, Parseval,\\ldots). Il permet le calcul de la transformée de Fourier des signaux à temps continu.",
+          "correct": false
+        },
+        {
+          "answer": "est un algorithme rapide basé sur le théorème des résidus et qui permet le calcul de la transformée de Fourier des signaux à temps continu.",
+          "correct": false
+        },
+        {
+          "answer": "est un algorithme rapide pour le calcul du produit matriciel de l'équation (\\ref{eq:prodFFT}) ci-dessous lorsque $N$ est une puissance de deux. \\begin{equation} \\label{eq:prodFFT} \\begin{pmatrix} 1      & 1        & 1         & 1      & 1    \\\\ 1      & w        & w^2       & \\cdots & w^{N-1}    \\\\ 1      & w^2      & w^4       & \\cdots & w^{2(N-1)} \\\\ \\vdots & \\vdots   & \\vdots    & \\ddots &\\vdots      \\\\ 1      &  w^{N-1} &w^{2(N-1)} & \\cdots & w^{(N-1)^2} \\end{pmatrix} \\begin{pmatrix} x_1 \\\\ x_2 \\\\ x_3 \\\\ \\vdots \\\\ x_N \\end{pmatrix} \\qquad \\text{avec: } w=e^{\\ic2\\pi/N} \\end{equation}",
+          "correct": true
+        },
+        {
+          "answer": "est un algorithme rapide basé sur les propriétés du filtrage à temps continu et qui est utilisé dans les analyseurs de spectre analogiques.",
+          "correct": false
+        }
+      ],
+      "id": "18-22-s5-FFT-1",
+      "isMultiple": false,
+      "question": "L'algorithme de transformée de Fourier rapide (FFT):",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "est un algorithme rapide qui permet de calculer la transformée de Fourier discrète; il s'applique dès que le nombre d'échantillons est pair.",
+          "correct": false
+        },
+        {
+          "answer": "est un algorithme rapide qui permet de calculer la transformée de Fourier discrète; il s'applique lorsque le nombre d'échantillons est une puissance de deux.",
+          "correct": true
+        },
+        {
+          "answer": "est un algorithme rapide pour le calcul du produit matriciel de l'équation (\\ref{eq:prodFFT-2}) ci-dessous o{\\`u} $x_1,\\ldots,x_N$ sont $N$ échantillons; l'algorithme s'applique dès que $N$ est pair.",
+          "correct": false
+        },
+        {
+          "answer": "est un algorithme rapide pour le calcul du produit matriciel de l'équation (\\ref{eq:prodFFT-2}) ci-dessous o{\\`u} $x_1,\\ldots,x_N$ sont $N$ échantillons; l'algorithme s'applique lorsque $N$ est une puissance de deux. \\begin{equation} \\label{eq:prodFFT-2} \\begin{pmatrix} 1      & 1        & 1         & 1      & 1    \\\\ 1      & w        & w^2       & \\cdots & w^{N-1}    \\\\ 1      & w^2      & w^4       & \\cdots & w^{2(N-1)} \\\\ \\vdots & \\vdots   & \\vdots    & \\ddots &\\vdots      \\\\ 1 & w^{N-1} &w^{2(N-1)} & \\cdots & w^{(N-1)^2} \\end{pmatrix} \\begin{pmatrix} x_1 \\\\ x_2 \\\\ x_3 \\\\ \\vdots \\\\ x_N \\end{pmatrix} \\qquad \\text{avec: } w=e^{\\ic2\\pi/N} \\,. \\end{equation}",
+          "correct": true
+        }
+      ],
+      "id": "18-24-s5-FFT-2",
+      "isMultiple": true,
+      "question": "L'algorithme de transformée de Fourier rapide (FFT):",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "le domaine de convergence de $H[z]$ est du type $\\{z\\in\\CC \\,|\\, |z|>R\\}$, o{\\`u} $R\\in\\RR_+^*$.",
+          "correct": false
+        },
+        {
+          "answer": "les p{\\^o}les de $H[z]$ sont à partie réelle négative.",
+          "correct": false
+        },
+        {
+          "answer": "la réponse impulsionnelle est bornée (càd il existe $M\\in\\RR^*_+$ tel que pour tout $n$, $|h_n|<M$).",
+          "correct": false
+        },
+        {
+          "answer": "$\\sum_{k=-\\infty}^{+\\infty} |h_k|$ est fini.",
+          "correct": true
+        }
+      ],
+      "id": "18-25-s6-stabiliteFiltre-1",
+      "isMultiple": false,
+      "question": "Un filtre numérique rationnel défini par $H[z]$ sa fonction de transfert en $z$, ou par $(h_n)_{\\in\\ZZ}$ sa réponse impulsionnelle, est stable si et seulement si:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "le domaine de convergence de $H[z]$ est un disque de rayon $R\\in\\RR_+^*$.",
+          "correct": false
+        },
+        {
+          "answer": "le domaine de convergence de $H[z]$ est du type $\\{z\\in\\CC \\;|\\; |z|>R\\}$, o{\\`u} $R\\in\\RR_+^*$.",
+          "correct": false
+        },
+        {
+          "answer": "l'ensemble $\\{z\\in\\CC \\;|\\;|z|=1\\}$ est inclus dans le domaine de convergence de $H[z]$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\lim_{n\\to+\\infty} h_n = 0$.",
+          "correct": false
+        }
+      ],
+      "id": "18-26-s6-stabiliteFiltre-2",
+      "isMultiple": false,
+      "question": "Un filtre à temps discret défini par $(h_n)_{n\\in\\ZZ}$ sa réponse impulsionnelle, ou par $H[z]$ sa transformée en $z$, est stable si et seulement si:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$h_n>0$ pout tout $n>0$.",
+          "correct": false
+        },
+        {
+          "answer": "$h_n=0$ pour tout $n<0$.",
+          "correct": true
+        },
+        {
+          "answer": "le domaine de convergence de $H[z]$ est du type $\\{z\\in\\CC \\;|\\; |z|>R\\}\\cup\\{\\infty\\}$ (càd le complémentaire d'un disque centré en $0$, point à l'infini compris).",
+          "correct": true
+        },
+        {
+          "answer": "le domaine de convergence de $H[z]$ est du type $\\{z\\in\\CC \\;|\\; R_1<|z|<R_2\\}$ o{\\`u} $R_2$ est un réel positif (càd un anneau compris entre les cercles centrés en $0$ et de rayon $R_1$ et $R_2$).",
+          "correct": false
+        }
+      ],
+      "id": "18-27-s6-causaliteFiltre-1",
+      "isMultiple": true,
+      "question": "Un filtre numérique défini par sa fonction de transfert en $z$ $H[z]$ ou par sa réponse impulsionnelle $(h_n)_{n\\in\\ZZ}$ est causal si et seulement si:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$h_n=0$ pour tout $n<0$ et $\\sum_{n\\in\\ZZ} |h_n|$ est fini.",
+          "correct": true
+        },
+        {
+          "answer": "Tous les $h_n$ sont de module inférieur à $1$.",
+          "correct": false
+        },
+        {
+          "answer": "Le domaine de convergence de $H[z]$ est le complémentaire d'un disque et le cercle unité appartient à ce domaine de convergence.",
+          "correct": true
+        },
+        {
+          "answer": "Le domaine de convergence de $H[z]$ est un disque et le cercle unité appartient à ce domaine de convergence.",
+          "correct": false
+        }
+      ],
+      "id": "18-28-s6-causaliteFiltre-2",
+      "isMultiple": true,
+      "question": "Un filtre numérique défini par sa réponse impulsionnelle $(h_n)_{n\\in\\ZZ}$ ou sa fonction de transfert en $z$ $H[z]$ est stable et causal si et seulement si:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$y_n = x_n + 0.5y_{n-1}$",
+          "correct": true
+        },
+        {
+          "answer": "$y_n = x_n - 0.5x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = x_n - 0.5y_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = 0.5x_n + x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = x_n + 0.5x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 + 0.5x_{n-1}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 - 0.5x_{n-1}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 - 0.5y_{n}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 + 0.5y_{n}}$",
+          "correct": false
+        }
+      ],
+      "id": "18-29-filtreNum1-1",
+      "isMultiple": false,
+      "question": "On note $x_n$ l'entrée et $y_n$ la sortie du filtre causal de fonction de transfert en $z$ donnée par $H[z]=\\frac{1}{1-0.5z^{-1}}$. La relation de récurrence entrée-sortie est",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "est stable.",
+          "correct": true
+        },
+        {
+          "answer": "est instable.",
+          "correct": false
+        },
+        {
+          "answer": "est de réponse impulsionnelle infinie.",
+          "correct": true
+        },
+        {
+          "answer": "est de réponse impulsionnelle finie.",
+          "correct": false
+        }
+      ],
+      "id": "18-30-filtreNum1-2",
+      "isMultiple": true,
+      "question": "Le filtre causal de fonction de transfert en $z$ donnée par $H[z]=\\frac{1}{1-0.5z^{-1}}$",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$y_n = x_n + 2y_{n-1}$",
+          "correct": true
+        },
+        {
+          "answer": "$y_n = x_n - 2y_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = 2x_n + y_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = 2x_n + x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = x_n + 2x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 + 2x_{n-1}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 - 2x_{n-1}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 - 2y_{n}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 + 2y_{n}}$",
+          "correct": false
+        }
+      ],
+      "id": "18-31-filtreNum2-1",
+      "isMultiple": false,
+      "question": "On note $x_n$ l'entrée et $y_n$ la sortie du filtre causal de fonction de transfert en $z$ donnée par $H[z]=\\frac{1}{1-2z^{-1}}$. La relation de récurrence entrée-sortie est",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "est stable.",
+          "correct": false
+        },
+        {
+          "answer": "est instable.",
+          "correct": true
+        },
+        {
+          "answer": "est de réponse impulsionnelle infinie.",
+          "correct": true
+        },
+        {
+          "answer": "est de réponse impulsionnelle finie.",
+          "correct": false
+        }
+      ],
+      "id": "18-32-filtreNum2-2",
+      "isMultiple": true,
+      "question": "Le filtre causal de fonction de transfert en $z$ donnée par $H[z]=\\frac{1}{1-2z^{-1}}$",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$y_n = x_n - 0.5x_{n-1}$",
+          "correct": true
+        },
+        {
+          "answer": "$y_n = x_n + 0.5y_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = x_n - 0.5y_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = 0.5x_n + x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = x_n + 0.5x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 + 0.5x_{n-1}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 - 0.5x_{n-1}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 - 0.5y_{n}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 + 0.5y_{n}}$",
+          "correct": false
+        }
+      ],
+      "id": "18-33-filtreNum3-1",
+      "isMultiple": false,
+      "question": "On note $x_n$ l'entrée et $y_n$ la sortie du filtre causal de fonction de transfert en $z$ donnée par $H[z]=1-0.5z^{-1}$. La relation de récurrence entrée-sortie est",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "est stable.",
+          "correct": true
+        },
+        {
+          "answer": "est instable.",
+          "correct": false
+        },
+        {
+          "answer": "est de réponse impulsionnelle infinie.",
+          "correct": false
+        },
+        {
+          "answer": "est de réponse impulsionnelle finie.",
+          "correct": true
+        }
+      ],
+      "id": "18-34-filtreNum3-2",
+      "isMultiple": true,
+      "question": "Le filtre causal de fonction de transfert en $z$ donnée par $H[z]=1-0.5z^{-1}$",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$y_n = x_n - 2x_{n-1}$",
+          "correct": true
+        },
+        {
+          "answer": "$y_n = x_n + 2y_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = x_n - 2y_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = 2x_n + x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = x_n + 2x_{n-1}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 + 2x_{n-1}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 - 2x_{n-1}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 - 2y_{n}}$",
+          "correct": false
+        },
+        {
+          "answer": "$y_n = \\frac{x_n}{1 + 2y_{n}}$",
+          "correct": false
+        }
+      ],
+      "id": "18-35-filtreNum4-1",
+      "isMultiple": false,
+      "question": "On note $x_n$ l'entrée et $y_n$ la sortie du filtre causal de fonction de transfert en $z$ donnée par $H[z]=1-2z^{-1}$. La relation de récurrence entrée-sortie est",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "est stable.",
+          "correct": true
+        },
+        {
+          "answer": "est instable.",
+          "correct": false
+        },
+        {
+          "answer": "est de réponse impulsionnelle infinie.",
+          "correct": false
+        },
+        {
+          "answer": "est de réponse impulsionnelle finie.",
+          "correct": true
+        }
+      ],
+      "id": "18-36-filtreNum4-2",
+      "isMultiple": true,
+      "question": "Le filtre causal de fonction de transfert en $z$ donnée par $H[z]=1-2z^{-1}$",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\Gamma_{y-z}(f) = |A(f)-B(f)|^2\\Gamma_x(f)$",
+          "correct": true
+        },
+        {
+          "answer": "$\\Gamma_{y-z}(f) = |A(f)|^2-|B(f)|^2\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y-z}(f) = |A(f)|^2+|B(f)|^2\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y-z}(f) = |A(f)-B(f)|\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y-z}(f) = |A(f)|-|B(f)|\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y-z}(f) = |A(f)|+|B(f)|\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y-z}(f) = \\Gamma_y(f) - \\Gamma_z(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y-z}(f) = \\Gamma_y(f) + \\Gamma_z(f)$",
+          "correct": false
+        }
+      ],
+      "id": "18-37-densiteSpecSomme-1",
+      "isMultiple": false,
+      "question": "On considère deux filtres attaqués en entrée par un même signal $x(t)$. Le premier filtre a pour réponse en fréquence $A(f)$ et sa sortie est notée $y(t)$, tandis que le deuxième filtre a pour réponse en fréquence $B(f)$ et sa sortie est notée $z(t)$. Pour tout signal $s(t)$, on note $\\Gamma_s(f)$ sa densité spectrale (puissance ou énergie selon le cas).",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\Gamma_{y+z}(f) = |A(f)+B(f)|^2\\Gamma_x(f)$",
+          "correct": true
+        },
+        {
+          "answer": "$\\Gamma_{y+z}(f) = |A(f)|^2+|B(f)|^2\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y+z}(f) = |A(f)|^2-|B(f)|^2\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y+z}(f) = |A(f)+B(f)|\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y+z}(f) = |A(f)|+|B(f)|\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y+z}(f) = |A(f)|-|B(f)|\\Gamma_x(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y+z}(f) = \\Gamma_y(f) + \\Gamma_z(f)$",
+          "correct": false
+        },
+        {
+          "answer": "$\\Gamma_{y+z}(f) = \\Gamma_y(f) - \\Gamma_z(f)$",
+          "correct": false
+        }
+      ],
+      "id": "18-38-densiteSpecSomme-2",
+      "isMultiple": false,
+      "question": "On considère deux filtres attaqués en entrée par un même signal $x(t)$. Le premier filtre a pour réponse en fréquence $A(f)$ et sa sortie est notée $y(t)$, tandis que le deuxième filtre a pour réponse en fréquence $B(f)$ et sa sortie est notée $z(t)$. Pour tout signal $s(t)$, on note $\\Gamma_s(f)$ sa densité spectrale (puissance ou énergie selon le cas).",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "C'est une opération de filtrage par un filtre non causal dont la réponse impulsionnelle est donnée par: \\[ h(\\theta)= \\begin{cases} 1 & \\text{si } \\theta\\in[-\\alpha,0] \\\\ 0 & \\text{sinon.} \\end{cases} \\]",
+          "correct": true
+        },
+        {
+          "answer": "C'est une opération de filtrage par un filtre causal dont la réponse impulsionnelle est donnée par: \\[ h(\\theta)= \\begin{cases} 1 & \\text{si } \\theta\\in[0,\\alpha] \\\\ 0 & \\text{sinon.} \\end{cases} \\]",
+          "correct": false
+        },
+        {
+          "answer": "C'est une opération de filtrage par un filtre non causal dont la réponse impulsionnelle est donnée par: \\[ h(\\theta)= \\begin{cases} x(\\theta) & \\text{si } \\theta\\in[t,t+\\alpha] \\\\ 0 & \\text{sinon.} \\end{cases} \\]",
+          "correct": false
+        },
+        {
+          "answer": "C'est une opération de filtrage par un filtre causal dont la réponse impulsionnelle est donnée par: \\[ h(\\theta)= \\begin{cases} x(\\theta) & \\text{si } \\theta\\in[t,t+\\alpha] \\\\ 0 & \\text{sinon.} \\end{cases} \\]",
+          "correct": false
+        }
+      ],
+      "id": "18-39-exFiltrage-1",
+      "isMultiple": false,
+      "question": "On considère l'opération qui à un signal à temps continu $x(t)$ associe le signal $y(t)$ défini par: y(t)=\\int_{t}^{t+\\alpha} x(\\theta) \\;d\\theta \\qquad \\text{avec $\\alpha>0$.}",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "C'est une opération de filtrage par un filtre non causal dont la réponse impulsionnelle est donnée par: \\[ h(\\theta)= \\begin{cases} 1 & \\text{si } \\theta\\in[-\\alpha,0] \\\\ 0 & \\text{sinon.} \\end{cases} \\]",
+          "correct": false
+        },
+        {
+          "answer": "C'est une opération de filtrage par un filtre causal dont la réponse impulsionnelle est donnée par: \\[ h(\\theta)= \\begin{cases} 1 & \\text{si } \\theta\\in[0,\\alpha] \\\\ 0 & \\text{sinon.} \\end{cases} \\]",
+          "correct": true
+        },
+        {
+          "answer": "C'est une opération de filtrage par un filtre non causal dont la réponse impulsionnelle est donnée par: \\[ h(\\theta)= \\begin{cases} x(\\theta) & \\text{si } \\theta\\in[t-\\alpha,t] \\\\ 0 & \\text{sinon.} \\end{cases} \\]",
+          "correct": false
+        },
+        {
+          "answer": "C'est une opération de filtrage par un filtre causal dont la réponse impulsionnelle est donnée par: \\[ h(\\theta)= \\begin{cases} x(\\theta) & \\text{si } \\theta\\in[t-\\alpha,t] \\\\ 0 & \\text{sinon.} \\end{cases} \\]",
+          "correct": false
+        }
+      ],
+      "id": "18-40-exFiltrage-2",
+      "isMultiple": false,
+      "question": "On considère l'opération qui à un signal à temps continu $x(t)$ associe le signal $y(t)$ défini par: y(t)=\\int_{t-\\alpha}^{t} x(\\theta) \\;d\\theta \\qquad \\text{avec $\\alpha>0$.}",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "Le signal qui contient l'information en bande de base est appelé porteuse.",
+          "correct": false
+        },
+        {
+          "answer": "Le signal qui contient l'information en bande de base est appelé signal modulant.",
+          "correct": true
+        },
+        {
+          "answer": "Le signal modulé est une sinusoïde pure.",
+          "correct": false
+        },
+        {
+          "answer": "Le signal modulé est toujours obtenu à partir de la transformée de Hilbert du signal modulant.",
+          "correct": false
+        }
+      ],
+      "id": "18-41-modulation",
+      "isMultiple": false,
+      "question": "Dans une modulation:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "Le signal qui contient l'information en bande de base est appelé porteuse.",
+          "correct": false
+        },
+        {
+          "answer": "Le signal qui contient l'information en bande de base est appelé signal modulant.",
+          "correct": true
+        },
+        {
+          "answer": "Le signal modulé est une sinusoïde pure.",
+          "correct": false
+        },
+        {
+          "answer": "Le signal modulé est toujours obtenu à partir de la transformée de Hilbert du signal modulant.",
+          "correct": false
+        }
+      ],
+      "id": "18-41-modulation",
+      "isMultiple": false,
+      "question": "Dans une modulation:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "sa réponse impulsionnelle $h(t)$ satisfait: $\\int_{-\\infty}^{+\\infty} |h(t)| \\,dt < +\\infty$.",
+          "correct": true
+        },
+        {
+          "answer": "la réponse à un Dirac en entrée est de durée finie.",
+          "correct": false
+        },
+        {
+          "answer": "sa réponse impulsionnelle $h(t)$ satisfait: $\\lim_{t\\to+\\infty} h(t) = 0$.",
+          "correct": false
+        },
+        {
+          "answer": "les pôles de sa réponse impulsionnelle sont de module inférieur à un.",
+          "correct": false
+        },
+        {
+          "answer": "sa réponse impulsionnelle satisfait $h(t)=0$ pour tout $t<0$.",
+          "correct": false
+        }
+      ],
+      "id": "18-42-stabiliteFitreTC-1",
+      "isMultiple": false,
+      "question": "Un filtre à temps continu est stable au sens entrée bornée-sortie bornée si et seulement si:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "sa réponse impulsionnelle $h(t)$ satisfait: $\\int_{-\\infty}^{+\\infty} |h(t)| \\,dt < +\\infty$.",
+          "correct": true
+        },
+        {
+          "answer": "sa réponse impulsionnelle $h(t)$ satisfait: $\\int_{-\\infty}^{+\\infty} |h(t)|^2 \\,dt < +\\infty$.",
+          "correct": false
+        },
+        {
+          "answer": "les pôles de sa réponse impulsionnelle sont à partie réelle négative.",
+          "correct": false
+        },
+        {
+          "answer": "la réponse à une entrée de durée finie est de durée finie.",
+          "correct": false
+        },
+        {
+          "answer": "sa réponse impulsionnelle satisfait $h(t)=0$ pour tout $t<0$.",
+          "correct": false
+        }
+      ],
+      "id": "18-43-stabiliteFitreTC-2",
+      "isMultiple": false,
+      "question": "Un filtre à temps continu est stable au sens entrée bornée-sortie bornée si et seulement si:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "La transformation de $x(t)$ en signal analytique $z_x(t)$ est indispensable avant toute analyse à l'analyseur de spectre car seules les fréquences positives existent.",
+          "correct": false
+        },
+        {
+          "answer": "Le signal analytique $z_x(t)$ est un signal à valeurs réelles.",
+          "correct": false
+        },
+        {
+          "answer": "Le signal analytique $z_x(t)$ est un signal à valeurs complexes.",
+          "correct": true
+        },
+        {
+          "answer": "Le signal analytique $z_x(t)$ peut {\\^e}tre à valeurs réelles ou complexes, celà dépend du signal $x(t)$.",
+          "correct": false
+        }
+      ],
+      "id": "18-44-sigAnalytique",
+      "isMultiple": false,
+      "question": "Soit $x(t)$ un signal réel et $X(f)$ sa transformée de Fourier. Rappelons que le signal analytique $z_x(t)$ associé au signal réel $x(t)$ peut {\\^e}tre défini par sa transformée de Fourier: Z_x(f) =",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$z_x(t)$ est à valeurs réelles car son spectre ne contient que des fréquences positives, les seules qui aient un sens physique.",
+          "correct": false
+        },
+        {
+          "answer": "$\\xi_x(t)$ est à valeurs complexes tandis que $z_x(t)$ est à valeurs réelles.",
+          "correct": false
+        },
+        {
+          "answer": "Le signal $x(t)$ est la partie réelle de $z_x(t)$ et $\\widehat{x}(t)$ est la partie imaginaire de $z_x(t)$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\widehat{x}(t)$ ne peut pas {\\^e}tre la partie imaginaire de $z_x(t)$ car $\\widehat{x}(t)$ est un signal à valeurs complexes.",
+          "correct": false
+        }
+      ],
+      "id": "18-45-tHilbert1",
+      "isMultiple": false,
+      "question": "Soit $x(t)$ un signal à temps continu et valeurs réelles, $z_x(t)$ son signal analytique associé, $\\widehat{x}(t)$ sa transformée de Hilbert et $\\xi_x(t)$ son enveloppe complexe.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "vaut $\\widehat{x}(t)=\\frac{1}{2}\\Big(\\delta(f-f_0)+\\delta(f+f_0)\\Big)$. En effet, on peut écrire $x(t)=\\frac{1}{2}(e^{\\ic2\\pi f_0t}+e^{-\\ic2\\pi f_0t})$ et on sait que la transformée de Hilbert de l'exponentielle est un Dirac, noté ici $\\delta$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)=\\frac{1}{2\\ic}\\Big(\\delta(f-f_0)-\\delta(f+f_0)\\Big)$. En effet, on peut écrire $x(t)=\\frac{1}{2\\ic}(e^{\\ic2\\pi f_0t}-e^{-\\ic2\\pi f_0t})$ et on sait que la transformée de Hilbert de l'exponentielle est un Dirac, noté $\\delta$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)=\\sin(2\\pi f_0t)$.",
+          "correct": true
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)=-\\sin(2\\pi f_0t)$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)= \\cos (2\\pi f_0t)$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)= -\\cos (2\\pi f_0t)$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)=\\frac{1}{2}(e^{\\ic2\\pi f_0t-\\ic\\pi/2}+e^{-\\ic2\\pi f_0t+\\ic\\pi/2})$. En effet, on peut écrire $x(t)=\\frac{1}{2}(e^{\\ic2\\pi f_0t}+e^{-\\ic2\\pi f_0t})$ et on sait que la transformée de Hilbert d'une exponentielle pure est obtenue par un déphasage pur de $-\\pi/2$ pour une fréquence positive et $+\\pi/2$ pour une fréquence négative.",
+          "correct": true
+        }
+      ],
+      "id": "18-46-tHilbertCos",
+      "isMultiple": true,
+      "question": "La transformée de Hilbert du signal $x(t)=\\cos(2\\pi f_0t)$ (o{\\`u} $f_0$ est une constante positive):",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "vaut $\\widehat{x}(t)=\\frac{1}{2}\\Big(\\delta(f-f_0)+\\delta(f+f_0)\\Big)$. En effet, on peut écrire $x(t)=\\frac{1}{2}(e^{\\ic2\\pi f_0t}+e^{-\\ic2\\pi f_0t})$ et on sait que la transformée de Hilbert de l'exponentielle est un Dirac, noté ici $\\delta$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)=\\frac{1}{2\\ic}\\Big(\\delta(f-f_0)-\\delta(f+f_0)\\Big)$. En effet, on peut écrire $x(t)=\\frac{1}{2\\ic}(e^{\\ic2\\pi f_0t}-e^{-\\ic2\\pi f_0t})$ et on sait que la transformée de Hilbert de l'exponentielle est un Dirac, noté $\\delta$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)= \\sin(2\\pi f_0t)$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)= -\\sin(2\\pi f_0t)$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)= \\cos(2\\pi f_0t)$.",
+          "correct": false
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)=-\\cos(2\\pi f_0t)$.",
+          "correct": true
+        },
+        {
+          "answer": "vaut $\\widehat{x}(t)=\\frac{1}{2\\ic}(-e^{\\ic2\\pi f_0t-\\ic\\pi/2}+e^{-\\ic2\\pi f_0t+\\ic\\pi/2})$. En effet, on peut écrire $x(t)=\\frac{1}{2\\ic}(e^{\\ic2\\pi f_0t}-e^{-\\ic2\\pi f_0t})$ et on sait que la transformée de Hilbert multiplie les fréquences positives par $+1$ et les fréquences négatives par $-1$.",
+          "correct": false
+        }
+      ],
+      "id": "18-47-tHilbertSin",
+      "isMultiple": false,
+      "question": "La transformée de Hilbert du signal $x(t)=\\sin(2\\pi f_0t)$ (o{\\`u} $f_0$ est une constante positive):",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\gamma_x(k)=\\E{x_nx_{n-k}}$",
+          "correct": true
+        },
+        {
+          "answer": "$\\gamma_x(k)= \\sum_{n\\in\\ZZ} x_nx_{n-k}$",
+          "correct": false
+        },
+        {
+          "answer": "$\\gamma_x(k)= \\lim_{N\\to \\infty}\\frac{1}{2N+1} \\sum_{n=-N}^N x_nx_{n-k}$",
+          "correct": false
+        },
+        {
+          "answer": "$\\gamma_x(k)= \\sum_{n=-k}^k x_nx_{n-k}$",
+          "correct": false
+        }
+      ],
+      "id": "18-48",
+      "isMultiple": false,
+      "question": "Soit $(x_n)_{n\\in\\ZZ}$ un signal aléatoire temps discret, à valeurs réelles, centré, stationnaire au sens large et de fonction d'auto-corrélation $(\\gamma_x(k))_{k\\in\\ZZ}$. Alors, par définition:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\E{x_nx_{n-k}}$ ne dépend que de $k$ et pas de $n$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\E{x_nx_{n-k}}$ ne dépend que de $n$ et pas de $k$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\E{x_nx_{n-k}}$ dépend à la fois de $n$ et de $k$.",
+          "correct": false
+        },
+        {
+          "answer": "Si $(x_n)_{n\\in\\ZZ}$ n'est pas centré, $\\E{x_nx_{n-k}}$ dépend à la fois de $n$ et $k$.",
+          "correct": false
+        }
+      ],
+      "id": "18-49",
+      "isMultiple": false,
+      "question": "Soit $(x_n)_{n\\in\\ZZ}$ un signal aléatoire temps discret, à valeurs réelles, stationnaire au sens large. Alors:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "si $(x_n)_{n\\in\\ZZ}$ et $(y_n)_{n\\in\\ZZ}$ sont indépendants, $\\gamma_z(k)=\\gamma_x(k)+\\gamma_y(k)$",
+          "correct": true
+        },
+        {
+          "answer": "par linéarité de l'espérance, on a toujours $\\gamma_z(k)=\\gamma_x(k)+\\gamma_y(k)$",
+          "correct": false
+        },
+        {
+          "answer": "si $(x_n)_{n\\in\\ZZ}$ et $(y_n)_{n\\in\\ZZ}$ sont gaussiens, $\\gamma_z(k)=\\gamma_x(k)+\\gamma_y(k)$",
+          "correct": false
+        },
+        {
+          "answer": "si $(x_n)_{n\\in\\ZZ}$ et $(y_n)_{n\\in\\ZZ}$ sont centrés, $\\gamma_z(k)=\\gamma_x(k)+\\gamma_y(k)$",
+          "correct": false
+        }
+      ],
+      "id": "18-50",
+      "isMultiple": false,
+      "question": "Soient $(x_n)_{n\\in\\ZZ}$ et $(y_n)_{n\\in\\ZZ}$ deux signaux aléatoires temps discret stationnaires au sens large. On note de plus $z_n=x_n+y_n$. Les fonctions d'auto-corrélation respectives sont notées $\\gamma_x(k)$, $\\gamma_y(k)$ et $\\gamma_z(k)$.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\gamma_x(k)=\\E{x_nx_{n-k}}$",
+          "correct": true
+        },
+        {
+          "answer": "$\\gamma_x(k)= \\sum_{n\\in\\ZZ} x_nx_{n-k}$",
+          "correct": false
+        },
+        {
+          "answer": "$\\gamma_x(k)= \\lim_{N\\to \\infty}\\frac{1}{2N+1} \\sum_{n=-N}^N x_nx_{n-k}$",
+          "correct": false
+        },
+        {
+          "answer": "$\\gamma_x(k)= \\sum_{n=-k}^k x_nx_{n-k}$",
+          "correct": false
+        }
+      ],
+      "id": "18-48",
+      "isMultiple": false,
+      "question": "Soit $(x_n)_{n\\in\\ZZ}$ un signal aléatoire temps discret, à valeurs réelles, centré, stationnaire au sens large et de fonction d'auto-corrélation $(\\gamma_x(k))_{k\\in\\ZZ}$. Alors, par définition:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\E{x_nx_{n-k}}$ ne dépend que de $k$ et pas de $n$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\E{x_nx_{n-k}}$ ne dépend que de $n$ et pas de $k$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\E{x_nx_{n-k}}$ dépend à la fois de $n$ et de $k$.",
+          "correct": false
+        },
+        {
+          "answer": "Si $(x_n)_{n\\in\\ZZ}$ n'est pas centré, $\\E{x_nx_{n-k}}$ dépend à la fois de $n$ et $k$.",
+          "correct": false
+        }
+      ],
+      "id": "18-49",
+      "isMultiple": false,
+      "question": "Soit $(x_n)_{n\\in\\ZZ}$ un signal aléatoire temps discret, à valeurs réelles, stationnaire au sens large. Alors:",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "si $x_n$ et $y_n$ sont indépendants, $\\gamma_z(k)=\\gamma_x(k)+\\gamma_y(k)$",
+          "correct": true
+        },
+        {
+          "answer": "par linéarité de l'espérance, on a toujours $\\gamma_z(k)=\\gamma_x(k)+\\gamma_y(k)$",
+          "correct": false
+        },
+        {
+          "answer": "si $x_n$ et $y_n$ sont gaussiens, $\\gamma_z(k)=\\gamma_x(k)+\\gamma_y(k)$",
+          "correct": false
+        },
+        {
+          "answer": "si $x_n$ et $y_n$ sont centrés, $\\gamma_z(k)=\\gamma_x(k)+\\gamma_y(k)$",
+          "correct": false
+        }
+      ],
+      "id": "18-50",
+      "isMultiple": false,
+      "question": "Soit $(x_n)_{n\\in\\ZZ}$ et $(y_n)_{n\\in\\ZZ}$ deux signaux aléatoires temps discret stationnaires au sens large. On note de plus $z_n=x_n+y_n$. Les fonctions d'auto-corrélation respectives sont notées $\\gamma_x(k)$, $\\gamma_y(k)$ et $\\gamma_z(k)$.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\hat{x}_n = \\frac{\\gamma_x(1)}{\\gamma_x(0)} x_{n-1}$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\hat{x}_n = \\frac{\\gamma_x(1)-\\gamma_x(0)}{\\gamma_x(0)} x_{n-1}$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\hat{x}_n = \\sum_{k\\in\\ZZ} \\gamma_x(k)x_{n-k}$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\hat{x}_n$ est tel que $\\E{(\\hat{x}_n-x_n)x_{n-1}}=0$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\hat{x}_n$ est tel que $\\E{(\\hat{x}_n-x_{n-1})x_{n-1}}=0$.",
+          "correct": false
+        }
+      ],
+      "id": "18-51-predictLin",
+      "isMultiple": true,
+      "question": "Soit $(x_n)_{n\\in\\ZZ}$ un signal aléatoire à valeurs réelles, stationnaire au sens large, centré et de fonction d'autocorrélation $\\gamma_x(k)$. Soit $\\hat{x}_n$ la prédiction linéaire de $x_n$ à partir de $x_{n-1}$ qui minimise l'erreur quadratique moyenne $\\E{(\\hat{x}_n-x_n)^2}$.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$\\hat{x}_n = \\frac{\\gamma_x(1)}{\\gamma_x(0)} x_{n-1}$.",
+          "correct": true
+        },
+        {
+          "answer": "$\\hat{x}_n = \\frac{\\gamma_x(0)}{\\gamma_x(1)} x_{n-1}$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\hat{x}_n = \\gamma_x(0)x_n + \\gamma_x(1)x_{n-1}$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\hat{x}_n$ est tel que $\\E{(\\hat{x}_n-x_{n-1})x_{n-1}}=0$.",
+          "correct": false
+        },
+        {
+          "answer": "$\\hat{x}_n$ est tel que $\\E{(x_n-x_{n-1})\\hat{x}_{n}}=0$.",
+          "correct": false
+        }
+      ],
+      "id": "18-52-predictLin",
+      "isMultiple": false,
+      "question": "Soit $(x_n)_{n\\in\\ZZ}$ un signal aléatoire à valeurs réelles, stationnaire au sens large, centré et de fonction d'autocorrélation $\\gamma_x(k)\\defeq\\E{x_nx_{n-k}}$. Soit $\\hat{x}_n$ la prédiction linéaire de $x_n$ à partir de $x_{n-1}$ qui minimise l'erreur quadratique moyenne $\\E{(\\hat{x}_n-x_n)^2}$.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ est un bruit blanc de puissance $1$.",
+          "correct": true
+        },
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ est un bruit coloré de puissance $1$.",
+          "correct": false
+        },
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ est une impulsion de Dirac.",
+          "correct": false
+        },
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ est un échelon unité.",
+          "correct": false
+        },
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ a une densité spectrale de puissance constante.",
+          "correct": true
+        }
+      ],
+      "id": "18-52-BruitBlanc-1",
+      "isMultiple": true,
+      "question": "Soit un signal aléatoire $(x_n)_{n\\in\\ZZ}$ stationnaire et centré dont la fonction d'autocorrélation est donnée par $\\gamma_x(k)=",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ est un bruit blanc de puissance $1$.",
+          "correct": true
+        },
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ est un bruit coloré de puissance $1$.",
+          "correct": false
+        },
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ est une impulsion de Dirac.",
+          "correct": false
+        },
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ est un échelon unité.",
+          "correct": false
+        },
+        {
+          "answer": "$(x_n)_{n\\in\\ZZ}$ a pour fonction d'autocorrélation un Dirac.",
+          "correct": true
+        }
+      ],
+      "id": "18-53-BruitBlanc-2",
+      "isMultiple": true,
+      "question": "Soit un signal aléatoire $(x_n)_{n\\in\\ZZ}$ stationnaire et centré dont la fonction densité spectrale est constante $\\Gamma_x(f)=1$.",
+      "theme": "Physique"
+    },
+    {
+      "answers": [
+        {
+          "answer": "est un algorithme rapide de calcul de transformée de Fourier à temps continu.",
+          "correct": false
+        },
+        {
+          "answer": "est un algorithme rapide de calcul temps réel de la transformée de Fourier d'un signal analogique.",
+          "correct": false
+        },
+        {
+          "answer": "effectue un produit matriciel de transformée de Fourier discrète lorsque le nombre d'échantillons est un multiple de 2.",
+          "correct": false
+        },
+        {
+          "answer": "effectue un produit matriciel de transformée de Fourier discrète lorsque le nombre d'échantillons est une puissance de 2.",
+          "correct": true
+        }
+      ],
+      "id": "18-23-s5-FFT-Suppl",
+      "isMultiple": false,
+      "question": "L'algorithme de Transformée de Fourier Rapide (ou FFT):",
+      "theme": "Physique"
+    }
+  ]
+}

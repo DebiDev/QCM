@@ -1,0 +1,30 @@
+.positionButton {
+	width: 100% !important;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+.questionModif {
+	.mat-form-field {
+		margin-top: 20px;
+	}
+}
+
+.centeringContent {
+	text-align: center;
+}
+
+.answer-correct {
+	color: green;
+}
+
+.answer-wrong {
+	color: red;
+}
+
+.mat-divider {
+	margin-top: 10px;
+    margin-bottom: 10px;
+}

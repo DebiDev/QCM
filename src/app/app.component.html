@@ -1,21 +1,140 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="viewContainer" cdkDropListGroup>
+  <!-- We're waiting until we get the JSON File -->
+  <div  *ngIf="qcmContainer"
+        class="qcmContainer">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h3> Liste des questions </h3>
+        <span class="spacer"></span>
+        <button mat-raised-button [disabled]="exportMode" (click)="newQuestion()" color="primary">Ajouter une question</button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-tab-group >
+      <mat-tab *ngFor="let theme of themesArray" label="{{theme ? theme : 'Non classé'}}">
+        <div scrollY="true" 
+              class="scroll" 
+              cdkDropList
+              #qcmList="cdkDropList"
+              [cdkDropListData]="qcmContainer.qcm"
+              [cdkDropListDisabled]="!exportMode"
+              (cdkDropListDropped)="drop($event)">
+          <!-- For every question, we create an expansion panel  -->
+          <mat-expansion-panel *ngFor="let q of qcmContainer.qcm; let i = index" cdkDrag>
+            <mat-expansion-panel-header *ngIf="q.theme == theme">
+              <mathjax [content]='q.question'></mathjax> 
+            </mat-expansion-panel-header>
+            <mat-panel-description *ngIf="q.theme == theme">
+              <mat-form-field floatLabel="always" *ngIf="arrayModif[i]">
+                <mat-label>Modifier la question</mat-label>
+                <textarea matInput 
+                  cdkTextareaAutosize 
+                  #autosize="cdkTextareaAutosize" 
+                  cdkAutosizeMinRows="2"
+                  cdkAutosizeMaxRows="5"
+                  [(ngModel)]="q.question"></textarea>
+              </mat-form-field>
+              <mat-form-field *ngIf="arrayModif[i]" floatLabel="always">
+                <mat-label>Identifiant de la question :</mat-label>
+                <textarea matInput [(ngModel)]="q.id"></textarea>
+              </mat-form-field>
+              <mat-form-field *ngIf="arrayModif[i]" floatLabel="always">
+                <mat-label>Thème de la question :</mat-label>
+                <input matInput [matAutocomplete]="auto" (input)="bindTheme($event.target.value)" [ngModel]="q.theme">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option (click)="bindTheme($event.target.innerText)" *ngFor="let t of themesArray" [value]="t">
+                    {{t}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+              <div *ngFor="let ans of q.answers; let ind = index">
+                <mat-divider></mat-divider>
+                <div class="answerDisplayer">
+                  <h3>{{ind + 1}}.</h3>
+                  <mathjax [content]="ans.answer"></mathjax>
+                  <i *ngIf="ans.correct" class="material-icons answer-correct">
+                    check_circle_outline
+                  </i>
+                  <i *ngIf="!ans.correct" class="material-icons answer-wrong">
+                    highlight_off
+                  </i>
+                </div>
+                <div *ngIf="arrayModif[i]" class="answerModif">
+                  <mat-form-field floatLabel="always">
+                    <mat-label>Modifier la réponse</mat-label>
+                    <textarea matInput 
+                      cdkTextareaAutosize 
+                      #autosize="cdkTextareaAutosize" 
+                      cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5" 
+                      [(ngModel)]="ans.answer"></textarea>
+                  </mat-form-field>
+                  <mat-checkbox [(ngModel)]="ans.correct" color="primary">Correcte ?</mat-checkbox>
+                </div>
+              </div>
+              <mat-action-row *ngIf="!arrayModif[i]">
+                <button mat-raised-button [disabled]="exportMode" (click)="startModif(i)" color="primary">Modifier</button>
+                <button mat-raised-button [disabled]="exportMode" (click)="openDeleteDialog(i)" color="warn">Supprimer</button>
+              </mat-action-row>
+              <mat-action-row *ngIf="arrayModif[i]">
+                <button mat-raised-button (click)="cancelModif(i)" color="warn">Annuler</button>
+                <button mat-raised-button (click)="validModif(i)" color="primary">Valider</button>
+              </mat-action-row>
+            </mat-panel-description>
+          </mat-expansion-panel>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+    
 
+  <!-- Exportation of question  -->
+  <div  class="exportContainer"
+        cdkDropList
+        #exportList="cdkDropList"
+        [cdkDropListData]="exportQCM"
+        (cdkDropListDropped)="drop($event)">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h3> Exportation </h3>
+        <span class="spacer"></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div scrollY="true" class="scroll">
+      <!-- For every question, we create an expansion panel  -->
+      <mat-expansion-panel *ngFor="let q of exportQCM; let i = index" cdkDrag>
+        <mat-expansion-panel-header>
+          <mathjax [content]='q.question'></mathjax> 
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+          <div *ngFor="let ans of q.answers; let ind = index">
+            <mat-divider></mat-divider>
+            <div class="answerDisplayer">
+              <h3>{{ind + 1}}.</h3>
+              <mathjax [content]="ans.answer"></mathjax>
+              <i *ngIf="ans.correct" class="material-icons answer-correct">
+                check_circle_outline
+              </i>
+              <i *ngIf="!ans.correct" class="material-icons answer-wrong">
+                highlight_off
+              </i>
+            </div>
+          </div>
+          <!-- <mat-action-row *ngIf="!arrayModif[i]">
+            <button mat-raised-button (click)="startModif(i)" color="primary">Modifier</button>
+            <button mat-raised-button (click)="openDeleteDialog(i)" color="warn">Supprimer</button>
+          </mat-action-row> -->
+        </mat-panel-description>
+      </mat-expansion-panel>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footerButtons">
+    <button *ngIf="!exportMode" mat-raised-button (click)="startImportation()" color="primary">Commencer une importation</button>
+    <button *ngIf="!exportMode" mat-raised-button (click)="startExportation()" color="primary">Commencer une exportation</button> 
+    <button *ngIf="exportMode" mat-raised-button (click)="cancelExportation()" color="warn">Annuler l'exportation</button>
+    <button *ngIf="exportMode" mat-raised-button (click)="addAllQuestionsToExportation()" color="basic">Ajouter toutes les question</button>
+    <button *ngIf="exportMode" mat-raised-button (click)="validExportation()" color="primary">Valider l'exportation</button>
+  </div>
+</footer>
 <router-outlet></router-outlet>

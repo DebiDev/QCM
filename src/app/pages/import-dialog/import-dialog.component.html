@@ -1,0 +1,28 @@
+<div>
+	<p>
+	  Voulez-vous ajouter un thème commun à ces {{nbQuestions}} questions ? 
+	</p>
+	<div class="importThemeContainer">
+		<mat-radio-group>
+		  <mat-radio-button checked="true" [value]="false">
+		    Pas pour le moment
+		  </mat-radio-button>
+		  <mat-radio-button #importWithTheme [value]="true">
+		    Oui
+		  </mat-radio-button>
+		</mat-radio-group>
+		<mat-form-field *ngIf="importWithTheme.checked" floatLabel="always">
+	      <mat-label>Thème commun :</mat-label>
+	      <input matInput [matAutocomplete]="auto" [(ngModel)]="communTheme">
+	      <mat-autocomplete #auto="matAutocomplete">
+	        <mat-option *ngFor="let t of themesArray" [value]="t">
+	          {{t}}
+	        </mat-option>
+	      </mat-autocomplete>
+	    </mat-form-field>
+	</div>
+	<div class="positionButton">
+		<button mat-raised-button (click)="cancel()" color="basic">Annuler l'importation</button>
+		<button mat-raised-button (click)="confirm()" color="warn">Confirmer</button>
+	</div>
+</div>

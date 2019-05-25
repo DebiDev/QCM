@@ -1,0 +1,1581 @@
+\newif\ifControleFinalUn
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ControleFinalUntrue
+%\ControleFinalUnfalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% mettre dans les commandes ci-dessous le(s) bon(s) repertoire(s)
+%%% sans / a la fin
+%% Bureau fixe
+\newcommand{\pathStyleFiles}{/home/castella/Documents/LatexStyle}
+%% Maison Mac
+%\newcommand{\pathStyleFiles}{/Users/marc/Desktop/Travail/LatexStyle}
+%%% Autres non utilises:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%
+\ifControleFinalUn
+\newcommand{\titreExam}{Examen SIC3601 \\ Contr{\^o}le final 1 \\ 27/04/2018}
+\newcommand{\noCF}{CF1}
+\else
+\newcommand{\titreExam}{Examen SIC3601 \\ Contr{\^o}le final 2 \\ 12/06/2018}
+\newcommand{\noCF}{CF2}
+\fi
+
+\documentclass[a4paper]{article}
+\usepackage[utf8x]{inputenc}    
+\usepackage[T1]{fontenc}
+\usepackage[francais,bloc,completemulti,ensemble]{automultiplechoice}
+%% options: bloc, completemulti, 
+%% option : ensemble -> sert à mettre la feuille de réponse à la fin    
+%% mettre option francais -> si besoin
+%%               noshuffle -> evite permutation des reponses
+%\usepackage{etex}
+%\usefonttheme[onlymath]{serif}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+%\usepackage[mathscr]{eucal}
+\usepackage{multicol}
+\usepackage{graphicx,tabularx}
+\usepackage{pstricks}%,pst-node,pst-text,pst-3d,pst-plot,pst-grad}
+%\usepackage{xcolor}
+
+% %%% Gras %%%
+\input{\pathStyleFiles/defGras.tex}
+% %%% Autres commandes en vrac %%%
+\input{\pathStyleFiles/defCdes.tex}
+\graphicspath{{./}{/home/castella/Documents/LatexStyle/Fig/}}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-CTD1}{%%% CF1 %%%
+  \begin{question}{18-1-s1-TFPorte}
+    La transformée de Fourier de la fonction
+    $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+    \begin{multicols}{3}
+      \begin{reponses}
+        \bonne{$R_T(f) = T\sinc(\pi f T)$}
+        \mauvaise{$R_T(f) = \sinc(\pi f T)$}
+        \mauvaise{$R_T(f) = \frac{1}{T}\sinc(\frac{\pi f}{T})$}
+        \mauvaise{$R_T(f) = \sinc(\frac{\pi f}{T})$}
+        \mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\sinc(\frac{\pi f}{T})$}
+        \mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\indic_{[-T/2,T/2]}(t)$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-CTD1}{%%% CF2 %%%
+  \begin{question}{18-2-s1-TFCosTronque}
+    La transformée de Fourier de la fonction
+    $r_T(t) = \cos(2\pi f_0t)\indic_{[-T/2,T/2]}(t)$ est:
+    % \begin{multicols}{2}
+    \begin{reponses}
+      \bonne{$R_T(f) = \frac{T}{2}\Big[ \sinc(\pi (f-f_0) T) +
+        \sinc(\pi (f+f_0) T) \Big] $}
+      \mauvaise{$R_T(f) = \frac{1}{2T}\Big[ \sinc\left(\frac{\pi
+            (f-f_0)}{T}\right) + \sinc\left(\frac{\pi
+            (f+f_0)}{T}\right)\Big]$}
+      \mauvaise{$R_T(f) = \frac{T}{2}\Big[ \sinc(\pi (f-f_0) T) +
+        \sinc(\pi (f+f_0) T) \Big]\indic_{[-1/2T,1/2T](f)} $}
+      \mauvaise{$R_T(f) = T\sinc(\pi (f-f_0)T )$}
+      \mauvaise{$R_T(f) = T e^{\ic 2 \pi (f-f_0) T} \sinc(\pi
+        (f-f_0)T)$}
+    \end{reponses}
+    % \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-CTD1}{%%% CF1 %%%
+  \begin{question}{18-3-s1-TFCos}
+    La fonction $t\mapsto\cos(2\pi f_0t)$:
+    \begin{reponses}
+      \bonne{a pour transformée de Fourier
+        $\frac{1}{2}\big( \delta(f-f_0)+\delta(f+f_0) \big)$.}
+      \mauvaise{a pour transformée de Fourier
+        $\frac{1}{2\ic}\big( \delta(f-f_0)-\delta(f+f_0) \big)$.}
+      \mauvaise{a pour transformée de Fourier $e^{\ic 2\pi f_0 t}$.}
+      \mauvaise{a pour transformée de Fourier $e^{-\ic 2\pi f_0 t}$.}
+    \end{reponses}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-CTD1}{%%% CF2 %%%
+  \begin{question}{18-4-s1-manipDirac}
+    Que vaut $\int_\RR \delta(t-t_0)x(t+a) \; dt$ ? (où $x(t)$
+    représente un signal continu, $t_0$ et $a$ sont des réels fixés)
+    \begin{multicols}{3}
+      \begin{reponses}
+        \bonne{$x(t_0+a)$}
+        \mauvaise{$x(t_0)$}
+        \mauvaise{$x(t_0+a)\delta(t-t_0)$}
+        \mauvaise{$x(a)$}
+        \mauvaise{$x(t_0-a)$}
+        \mauvaise{$x(a-t_0)$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-CTD1}{%%% CF1 %%%
+  \begin{question}{18-5-s1-convolDirac}
+    Que vaut le produit de convolution $\delta(t+t_0)\star x(t)$?
+    \begin{multicols}{3}
+      \begin{reponses}
+        % \bonne{$\int_\RR \delta(u+t_0)x(t-u)\;du$}
+        % \bonne{$\int_\RR \delta(t-u+t_0)x(u) \;du$}
+        \bonne{$x(t+t_0)$}
+        \mauvaise{$x(t-t_0)$}
+        \mauvaise{$x(t_0-t)$}
+        \mauvaise{$x(t)$}
+        \mauvaise{$x(t_0)$}
+        \mauvaise{$x(0)$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-CTD1}{%%% CF2 %%%
+  \begin{question}{18-6-s1-propTF} Soit $x(t)$ un signal et $X(f)$ sa
+    transformée de Fourier (ce que l'on note par: $x(t) \TF
+    X(f)$). Alors:
+  \begin{multicols}{2}\AMCBoxedAnswers
+    \begin{reponses}
+      \bonne{ $x(t)e^{\ic2\pi f_0t} \TF X(f-f_0)$}
+      \mauvaise{ $x(t+t_0) \TF X(ft_0)$}
+      \mauvaise{ $x(at) \TF aX(af)$}
+      \mauvaise{si $x(t)$ est à valeurs réelles, alors $X(f)=X(-f)$.}
+      \mauvaise{$x(t)\cos(2\pi f_0(t) \TF X(f)\star\delta(f-f_0)$}
+      % \bonne{ si $x(t)$ est réel, alors $X(f) = X(-f)^*$.}
+    \end{reponses}
+  \end{multicols}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C2}{%%% CF1 %%%
+  \begin{question}{18-7-s2-InterCorrelPuisTC}
+    Quelle est l'expression correcte de la fonction d'intercorrélation
+    de deux signaux $x(t)$ et $y(t)$ temps continu et de puissance
+    finie?
+    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\gamma_{xy}(\tau) = \lim_{T\to+\infty} \frac{1}{2T}
+          \int_{-T}^T x(t)y(t-\tau)^* \;dt$}
+        \mauvaise{$\gamma_{xy}(\tau) = \int_{-\infty}^{\infty}
+          x(t)y(t-\tau)^* \;dt$}
+        \mauvaise{$\gamma_{xy}(\tau) = \lim_{T\to+\infty} \frac{1}{2T}
+          \int_{-T}^T x(t)y(\tau-t)^* \;dt$}
+        \mauvaise{$\gamma_{xy}(\tau) = \int_{-\infty}^{\infty}
+          x(t)y(\tau-t)^* \;dt$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C2}{%%% CF2 %%%
+  \begin{question}{18-8-s2-InterCorrelEnergTC}
+    Quelle est l'expression correcte de la fonction d'intercorrélation
+    de deux signaux $x(t)$ et $y(t)$ temps continu et d'énergie 
+    finie?
+    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \mauvaise{$\gamma_{xy}(\tau) = \lim_{T\to+\infty} \frac{1}{2T}
+          \int_{-T}^T x(t)y(t-\tau)^* \;dt$}
+        \bonne{$\gamma_{xy}(\tau) = \int_{-\infty}^{\infty}
+          x(t)y(t-\tau)^* \;dt$}
+        \mauvaise{$\gamma_{xy}(\tau) = \lim_{T\to+\infty} \frac{1}{2T}
+          \int_{-T}^T x(t)y(\tau-t)^* \;dt$}
+        \mauvaise{$\gamma_{xy}(\tau) = \int_{-\infty}^{\infty}
+          x(t)y(\tau-t)^* \;dt$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C2}{%%% CF1 %%%
+  \begin{question}{18-9-s2-unitePuissance}
+    En quelle unité s'exprime la puissance d'un signal $x(t)$ dans le
+    cours de traitement du signal?
+    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{Aucune unité.}
+        \mauvaise{En Joules (J).}
+        \mauvaise{En kiloJoules (kJ).}
+        \mauvaise{En Watts (W).}
+        \mauvaise{En Ampères-Volts (AV).}
+        \mauvaise{En Ampères-Heure (Ah).}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C2}{%%% CF2 %%%
+  \begin{question}{18-10-s2-uniteEnergie}
+    En quelle unité s'exprime l'énergie d'un signal $x(t)$ dans le
+    cours de traitement du signal?
+    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{Aucune unité.}
+        \mauvaise{En Joules (J).}
+        \mauvaise{En kiloJoules (kJ).}
+        \mauvaise{En Watts (W).}
+        \mauvaise{En Volt-carré (V2).}
+        \mauvaise{En Volts-Ampère par seconde (VA/s).}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C2}{%%% CF2 %%%
+  \begin{questionmult}{18-11-s2-DSE1} 
+    \bareme{d=2-N,p=0}
+    Soit $x(t)$ un signal déterministe d'énergie finie, $X(f)$ sa
+    transformée de Fourier et $\Gamma_x(f)$ sa densité spectrale
+    d'énergie.
+    \begin{reponses}
+      \bonne{On a: $\forall f\in\RR \quad \Gamma_x(f) = |X(f)|^2$.}
+      \mauvaise{On a: $\forall f\in\RR \quad \Gamma_x(f) = |X(f)|$.}
+      \bonne{On a l'égalité:
+        $\ds \int_{-\infty}^\infty|x(t)|^2\,dt=\int_{-\infty}^\infty
+        \Gamma_x(f) \,df$.}
+      \mauvaise{$\Gamma_x(f)$ est toujours maximal en $0$.}
+    \end{reponses}
+\end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C2}{%%% CF1 %%%
+  \begin{question}{18-12-s2-DSE2} Soit $x(t)$ un signal déterministe
+    d'énergie finie, $X(f)$ sa transformée de Fourier et $\Gamma_x(f)$
+    sa densité spectrale d'énergie.
+  \begin{reponses}
+  \bonne{ L'énergie de $x(t)$ vaut $\ds \int_{-\infty}^\infty |X(f)|^2 \,df$.}
+  \mauvaise{ On a: $\forall f\in\RR \quad \Gamma_x(f) = |X(f)|$.}
+  \mauvaise{ $\Gamma_x(f)$ admet toujours une symétrie hermitienne,
+    càd: $\forall f\in\RR \quad \Gamma(f)=\Gamma(-f)^*$.}
+  \mauvaise{ $\Gamma_x(f)$ est toujours maximale en $0$.}
+  \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C3}{%%% CF1 et CF2 %%%
+  \begin{question}{18-13-s3-ThShannon} Pour qu'un signal à bande limité
+    $[-B,B]$ soit entièrement défini par ses échantillons $x(nT)$, la
+    condition de Shannon-Nyquist indique qu'il faut que:
+    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\frac{1}{T}\geq 2B$}
+        \mauvaise{$\frac{1}{T}\geq B$}
+        \mauvaise{$T\geq 2B$}
+        \mauvaise{$T\geq B$}
+        \mauvaise{$2T\geq B$}
+        \mauvaise{$\frac{2}{T}\geq B$}
+        \mauvaise{$2T \geq \frac{1}{B}$}
+        \mauvaise{$\frac{1}{B}\geq T$}
+        \mauvaise{$B\geq 2T$}
+        \mauvaise{$B\geq T$}
+        \mauvaise{$2B\geq T$}
+        \mauvaise{$\frac{2}{B}\geq T$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C3}{%%% CF1 et CF2 %%%
+  \begin{question}{18-13-s3-ThShannon} Pour qu'un signal à bande limité
+    $[-B,B]$ soit entièrement défini par ses échantillons $x(nT)$, la
+    condition de Shannon-Nyquist indique qu'il faut que:
+    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\frac{1}{T}\geq 2B$}
+        \mauvaise{$\frac{1}{T}\geq B$}
+        \mauvaise{$T\geq 2B$}
+        \mauvaise{$T\geq B$}
+        \mauvaise{$2T\geq B$}
+        \mauvaise{$\frac{2}{T}\geq B$}
+        \mauvaise{$2T \geq \frac{1}{B}$}
+        \mauvaise{$\frac{1}{B}\geq T$}
+        \mauvaise{$B\geq 2T$}
+        \mauvaise{$B\geq T$}
+        \mauvaise{$2B\geq T$}
+        \mauvaise{$\frac{2}{B}\geq T$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C3}{%%% CF2 %%%
+  \begin{question}{18-14-s3-appli1Shannon} Un signal sinusoïdal pur de
+    fréquence 418Hz est échantillonné. La durée entre deux
+    échantillons est de 20ms.
+  \begin{reponses}
+  \mauvaise{ La condition d'échantillonnage de Shannon est respectée.}
+  \mauvaise{ La condition d'échantillonnage de Shannon n'est pas respectée.
+    Il y a repliement de spectre et une raie est repliée à 20Hz.}
+  \bonne{ La condition d'échantillonnage de Shannon n'est pas respectée.
+    Il y a repliement de spectre et une raie est repliée à 18Hz.}
+  \mauvaise{ La transformée de Fourier à temps discret du signal
+    échantillonné n'est pas définie car la condition d'échantillonnage
+    n'est pas respectée.}
+  \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C3}{%%% CF1 %%%
+  \begin{question}{18-15-s3-appli2Shannon} Un signal sinuso{\"\i}dal pur de
+    fréquence 4135Hz est échantillonné. La durée entre deux
+    échantillons consécutifs est de 0.5ms.
+  \begin{reponses}
+  \bonne{ La condition d'échantillonnage de Shannon n'est pas respectée.
+    Il y a repliement de spectre et il existe une raie repliée à 1865Hz.}
+  \mauvaise{ La condition d'échantillonnage de Shannon n'est pas respectée.
+    Il y a repliement de spectre et il existe une raie repliée à 1135Hz.}
+  \mauvaise{ La condition d'échantillonnage de Shannon n'est pas respectée.
+    Il y a repliement de spectre et il existe une raie repliée à 865Hz.}
+  \mauvaise{ La condition d'échantillonnage de Shannon est respectée.}
+  \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD3}{%%% CF1 %%%
+  \begin{question}{18-16-s3-familleSinc} Considérons la famille de signaux
+    d'énergie finie $(s_n(t))_{n\in\ZZ}$ définie par
+    \begin{gather*}
+      s_n(t) = \frac{1}{\sqrt{T}}\sinc\left(\frac{\pi(t-nT)}{T}\right)
+    \end{gather*}
+    On rappelle l'expression de la transformée de Fourier $S_n(f)$ de $s_n(t)$:
+    \begin{gather*}
+      S_n(f) = \sqrt{T}e^{-\ic 2\pi nTf}\indic_{[-1/2T,1/2T]}(f)
+    \end{gather*}
+%    \begin{multicols}{1}
+      \begin{reponses}
+        % \bonne{Les signaux $(s_n(t))_{n\in\ZZ}$ sont une famille
+        % orthonormée.}
+
+        \mauvaise{Les signaux $(s_n(t))_{n\in\ZZ}$ sont une base
+          orthonormée de tous les signaux d'énergie finie.}
+
+        \bonne{Les signaux $(s_n(t))_{n\in\ZZ}$ sont une base
+          orthonormée des signaux $x(t)$ d'énergie finie et tels que
+          leur transformée de Fourier vérifie $X(f)=0$ pour
+          $f\notin[-1/2T,1/2T]$.}
+
+        \mauvaise{Les signaux $(s_n(t))_{n\in\ZZ}$ sont une base
+          orthonormée des signaux $x(t)$ d'énergie finie et tels que
+          $x(t)=0$ pour $t\notin[-T/2,T/2]$.}
+
+        \mauvaise{Les signaux $(s_n(t))_{n\in\ZZ}$ sont une base
+          orthonormée des signaux $x(t)$ d'énergie finie et tels que
+          $x(t)=0$ pour $t\notin[-1/2T,1/2T]$.}
+        
+        % \bonne{Tout signal $x(t)$ d'énergie finie dont la
+        % transformée de Fourier $X(f)$ vérifie $X(f)=0$ pour tout
+        % $f, |f|>1/2T$ peut s'exprimer à partir des
+        % $(s_n(t))_{n\in\ZZ}$.}
+
+        % \bonne{Les signaux $(S_n(f))_{n\in\ZZ}$ sont une famille
+        % orthonormée.}  \mauvaise{Les signaux $(S_n(f))_{n\in\ZZ}$
+        % sont une base orthonormée de tous les signaux d'énergie
+        % finie.}
+
+        % \mauvaise{Les signaux $(S_n(f))_{n\in\ZZ}$ sont une base
+        % orthonormée des signaux d'énergie finie et de bande limitée
+        % $[-1/2T,1/2T]$.}
+
+        % \mauvaise{Les signaux $(S_n(f))_{n\in\ZZ}$ sont une base
+        % orthonormée des signaux d'énergie finie et de support limité
+        % dans le temps à $[-T/2,T/2]$.}
+      \end{reponses}
+%    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD3}{%%% CF2 %%%
+  \begin{question}{18-17-s3-SincProjection} Considérons la famille de
+    signaux d'énergie finie $(s_n(t))_{n\in\ZZ}$ définie par
+    \begin{gather*}
+      s_n(t) = \frac{1}{\sqrt{T}}\sinc\left(\frac{\pi(t-nT)}{T}\right)
+    \end{gather*}
+    On rappelle l'expression de la transformée de Fourier $S_n(f)$ de $s_n(t)$:
+    \begin{gather*}
+      S_n(f) = \sqrt{T}e^{-\ic 2\pi nTf}\indic_{[-1/2T,1/2T]}(f)
+    \end{gather*}
+    On s'intéresse à la projection $\hat{x}(t)$ sur l'espace engendré
+    par la famille $(s_n(t))_{n\in\ZZ}$ d'un signal $x(t)$ supposé
+    continu et d'énergie finie.
+%    \begin{multicols}{}
+      \begin{reponses}
+        \bonne{$\hat{x}(t) = \sum_{n\in\ZZ}\alpha_n s_n(t)$ avec
+          $\alpha_n = \int_\RR x(t)s_n(t)^*\;dt$ (sans autre hypothèse
+          sur $x(t)$).}
+
+        \bonne{Si $x(t)$ est à bande limitée $[-1/2T,1/2T]$, alors
+          $\hat{x}(t) = \sum_{n\in\ZZ} x(nT) s_n(t)$.}
+
+        \mauvaise{$\hat{x}(t) = \sum_{n\in\ZZ} x(nT) s_n(t)$ (sans
+          autre hypothèse sur $x(t)$).}
+
+        \mauvaise{On a $x(nT) = \int_\RR x(t)s_n(t)^*\;dt$ (sans autre
+          hypothèse sur $x(t)$).}
+      \end{reponses}
+%    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C4}{%%% CF1 %%%
+  \begin{question}{18-20-s4-Tz-1} Le domaine de convergence de la transformée en
+    $z$ d'un signal $(x_n)_{n\in\ZZ}$ à temps discret:
+   \begin{reponses}
+     \mauvaise{ est $\CC$ tout entier, sauf pour quelques cas particuliers.}
+     \mauvaise{ n'est pas fondamental car les filtres et signaux que
+       l'on considère sont souvent rationnels et n'ont donc qu'un
+       nombre fini de p{\^o}les.}
+     \bonne{ est important, car deux fonctions de la variable complexe
+       $z$ ayant la \emph{m{\^e}me} expression mais définies sur des
+       domaines de convergence distincts peuvent {\^e}tre les transformées
+       de deux signaux à temps discret distincts.}
+     \mauvaise{ doit contenir le cercle unité pour que le signal
+       $(x_n)_{n\in\ZZ}$ existe.}
+   \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C4}{%%% CF2 %%%
+  \begin{question}{18-21-s4-Tz-2} Le domaine de convergence de la transformée en
+    $z$ d'un signal $x_n,n\in\ZZ$ à temps discret:
+    \begin{reponses}
+    \mauvaise{ donne une indication sur l'inversibilité de la transformée
+      en $z$: le cercle unité doit en effet appartenir au domaine de
+      convergence.}
+    \mauvaise{ est vide sauf pour des signaux de durée finie.}
+    \mauvaise{ n'a aucun intér{\^e}t puisque seule l'expression de la
+      transformée en z nous intéresse.}
+    \bonne{ est important car une m{\^e}me fonction de la variable complexe
+      $z$ considérée sur des domaines de convergence distincts peut
+      {\^e}tre la transformée en $z$ de deux signaux à temps discret
+      distincts.}
+    \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD4}{%%% CF1 %%%
+  \begin{questionmult}{18-18-s4-Translat1/2SpectreNum}
+    \bareme{d=2-N,p=0} % equivaut a \bareme{haut=2}
+    % 2pts reponse parfaite, -1 par erreur
+    % N = nombre de réponses possibles (hors "aucune réponse correcte") = 4
+    % d = décalage a priori = 2-N = -2
+    % p = note plancher = 0
+    % 0 point par réponse fausse, 1 point réponse juste (défaut)
+    % on verifie
+    Soit $x_n,n\in\ZZ$ un signal numérique à valeurs réelles de
+    transformée de Fourier temps discret $X(f)$. Si l'on considère le
+    signal $y_n,n\in\ZZ$ de transformée de Fourier
+    $Y(f)=X(f+\frac{1}{2})$, on peut dire:
+    % \begin{multicols}{3}\AMCBoxedAnswers
+    \begin{reponses}
+      \bonne{le signal $y_n$ a ses hautes fréquences et basses
+        fréquences inversées par rapport à $x_n$.}
+
+      \bonne{on a $y_n = x_ne^{+\ic\pi f n}$ d'après la propriété de
+        modulation de la transformée de Fourier temps discret.}
+       
+      \mauvaise{la translation de $1/2$ dans le domaine fréquentiel
+        décale les instants d'échantillonnage d'une demi-période
+        d'échantillonnage.}
+      
+      \mauvaise{comme le signal $x_n$ est à temps discret, un décalage
+        de $1/2$ des fréquences n'est pas possible et le signal $y_n$
+        n'existe donc pas.}
+      \end{reponses}
+%    \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD4}{%%% CF2 %%%
+  \begin{questionmult}{18-19-s4-(-1)**nxn}
+    \bareme{d=2-N,p=0}
+    Soit $x_n,n\in\ZZ$ un signal numérique à valeurs réelles de
+    transformée de Fourier temps discret $X(f)$ et $y_n=(-1)^nx_n$ de
+    transformée de Fourier à temps discret $Y(f)$.
+    % \begin{multicols}{3}\AMCBoxedAnswers
+    \begin{reponses}
+      \bonne{le signal $y_n$ a ses hautes fréquences et basses
+        fréquences inversées par rapport à $x_n$.}
+     
+      \bonne{d'après la propriété de modulation de la transformée de
+        Fourier, $Y(f)=X(f+\frac{1}{2})$.}
+
+      \mauvaise{d'après la propriété de modulation de la transformée
+        de Fourier, $Y(f)=X(f+1)$.}
+
+      \mauvaise{le signal $y_n$ n'admet pas de transformée de Fourier
+        à temps discret.}
+    \end{reponses}
+    % \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C5}{%%% CF1 %%%
+  \begin{question}{18-22-s5-FFT-1} L'algorithme de transformée de
+    Fourier rapide (FFT):
+   \begin{reponses}
+   \mauvaise{ est un algorithme rapide basé sur les propriétés fondamentales
+     de la transformée de Fourier (linéarité, changement de variables,
+     Parseval,\ldots). Il permet le calcul de la transformée de Fourier des
+     signaux à temps continu.}
+   \mauvaise{ est un algorithme rapide basé sur le théorème des résidus et
+     qui permet le calcul de la transformée de Fourier des signaux à
+     temps continu.}
+   \bonne{ est un algorithme rapide pour le calcul du produit matriciel
+     de l'équation (\ref{eq:prodFFT}) ci-dessous lorsque $N$ est une
+     puissance de deux.
+     \begin{equation}
+       \label{eq:prodFFT}
+       \begin{pmatrix}
+         1      & 1        & 1         & 1      & 1    \\
+         1      & w        & w^2       & \cdots & w^{N-1}    \\
+         1      & w^2      & w^4       & \cdots & w^{2(N-1)} \\
+         \vdots & \vdots   & \vdots    & \ddots &\vdots      \\
+         1      &  w^{N-1} &w^{2(N-1)} & \cdots & w^{(N-1)^2}
+       \end{pmatrix}
+       \begin{pmatrix}
+         x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_N
+       \end{pmatrix} \qquad \text{avec: } w=e^{\ic2\pi/N} 
+     \end{equation}}
+   \mauvaise{ est un algorithme rapide basé sur les propriétés du filtrage à
+     temps continu et qui est utilisé dans les analyseurs de spectre
+     analogiques.}
+   \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C5}{%%% CF2 %%%
+  \begin{question}{18-24-s5-FFT-2} L'algorithme de transformée de Fourier
+    rapide (FFT):
+    \begin{reponses}
+      \mauvaise{est un algorithme rapide qui permet de calculer la
+        transformée de Fourier discrète; il s'applique dès que le
+        nombre d'échantillons est pair.}
+
+      \bonne{est un algorithme rapide qui permet de calculer la
+        transformée de Fourier discrète; il s'applique lorsque le
+        nombre d'échantillons est une puissance de deux.}
+
+      \mauvaise{ est un algorithme rapide pour le calcul du produit
+        matriciel de l'équation (\ref{eq:prodFFT-2}) ci-dessous o{\`u}
+        $x_1,\ldots,x_N$ sont $N$ échantillons; l'algorithme
+        s'applique dès que $N$ est pair.}
+
+      \bonne{est un algorithme rapide pour le calcul du produit
+        matriciel de l'équation (\ref{eq:prodFFT-2}) ci-dessous o{\`u}
+        $x_1,\ldots,x_N$ sont $N$ échantillons; l'algorithme
+        s'applique lorsque $N$ est une puissance de deux.
+        \begin{equation}
+          \label{eq:prodFFT-2}
+          \begin{pmatrix}
+            1      & 1        & 1         & 1      & 1    \\
+            1      & w        & w^2       & \cdots & w^{N-1}    \\
+            1      & w^2      & w^4       & \cdots & w^{2(N-1)} \\
+            \vdots & \vdots   & \vdots    & \ddots &\vdots      \\
+            1 & w^{N-1} &w^{2(N-1)} & \cdots & w^{(N-1)^2}
+          \end{pmatrix}
+          \begin{pmatrix}
+            x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_N
+          \end{pmatrix} \qquad \text{avec: } w=e^{\ic2\pi/N} \,.
+        \end{equation}}
+    \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C6}{%%% CF1 %%%
+  \begin{question}{18-25-s6-stabiliteFiltre-1} Un filtre numérique
+    rationnel défini par $H[z]$ sa fonction de transfert en $z$, ou par
+    $(h_n)_{\in\ZZ}$ sa réponse impulsionnelle, est stable si et
+    seulement si:
+   \begin{reponses}
+   \mauvaise{ le domaine de convergence de $H[z]$ est du type
+     $\{z\in\CC \,|\, |z|>R\}$, o{\`u} $R\in\RR_+^*$.}
+
+   \mauvaise{ les p{\^o}les de $H[z]$ sont à partie réelle négative.}
+
+   \mauvaise{ la réponse impulsionnelle est bornée (càd il existe
+     $M\in\RR^*_+$ tel que pour tout $n$, $|h_n|<M$).}
+
+   \bonne{ $\sum_{k=-\infty}^{+\infty} |h_k|$ est fini.}
+   \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C6}{%%% CF2 %%%
+  \begin{question}{18-26-s6-stabiliteFiltre-2} Un filtre à temps
+    discret défini par $(h_n)_{n\in\ZZ}$ sa réponse impulsionnelle, ou
+    par $H[z]$ sa transformée en $z$, est stable si et seulement si:
+  \begin{reponses}
+    \mauvaise{ le domaine de convergence de $H[z]$ est un disque de
+      rayon $R\in\RR_+^*$.}
+
+    \mauvaise{ le domaine de convergence de $H[z]$ est du type
+      $\{z\in\CC \;|\; |z|>R\}$, o{\`u} $R\in\RR_+^*$.}
+
+    \bonne{ l'ensemble $\{z\in\CC \;|\;|z|=1\}$ est inclus dans le
+      domaine de convergence de $H[z]$.}
+
+    \mauvaise{ $\lim_{n\to+\infty} h_n = 0$.}
+  \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C6}{%%% CF1 %%%
+  \begin{questionmult}{18-27-s6-causaliteFiltre-1} 
+    \bareme{d=2-N,p=0}
+    Un filtre numérique défini par sa fonction de transfert en $z$
+    $H[z]$ ou par sa réponse impulsionnelle $(h_n)_{n\in\ZZ}$ est
+    causal si et seulement si:
+    \begin{reponses}
+    \mauvaise{ $h_n>0$ pout tout $n>0$.}
+
+    \bonne{ $h_n=0$ pour tout $n<0$.}
+
+    \bonne{ le domaine de convergence de $H[z]$ est du type
+      $\{z\in\CC \;|\; |z|>R\}\cup\{\infty\}$ (càd le complémentaire
+      d'un disque centré en $0$, point à l'infini compris).}
+
+    \mauvaise{ le domaine de convergence de $H[z]$ est du type
+      $\{z\in\CC \;|\; R_1<|z|<R_2\}$ o{\`u} $R_2$ est un réel positif
+      (càd un anneau compris entre les cercles centrés en $0$ et de
+      rayon $R_1$ et $R_2$).}
+  \end{reponses}
+\end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C6}{%%% CF2 %%%
+  \begin{questionmult}{18-28-s6-causaliteFiltre-2} 
+    \bareme{d=2-N,p=0}
+    Un filtre numérique défini par sa réponse impulsionnelle
+    $(h_n)_{n\in\ZZ}$ ou sa fonction de transfert en $z$ $H[z]$ est
+    stable et causal si et seulement si:
+	\begin{reponses}
+	\bonne{ $h_n=0$ pour tout $n<0$ et $\sum_{n\in\ZZ} |h_n|$ est fini.}
+
+	\mauvaise{ Tous les $h_n$ sont de module inférieur à $1$.}
+
+	\bonne{ Le domaine de convergence de $H[z]$ est le
+          complémentaire d'un disque et le cercle unité appartient à
+          ce domaine de convergence.}
+
+	\mauvaise{ Le domaine de convergence de $H[z]$ est un disque
+          et le cercle unité appartient à ce domaine de convergence.}
+	\end{reponses}
+\end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD6}{%%% CF1 %%%
+  \begin{question}{18-29-filtreNum1-1} On note $x_n$ l'entrée et $y_n$ la
+    sortie du filtre causal de fonction de transfert en $z$ donnée par
+    $H[z]=\frac{1}{1-0.5z^{-1}}$. La relation de récurrence entrée-sortie est
+    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$y_n = x_n + 0.5y_{n-1}$}
+        \mauvaise{$y_n = x_n - 0.5x_{n-1}$}
+        \mauvaise{$y_n = x_n - 0.5y_{n-1}$}
+        %\mauvaise{$y_n = 0.5x_n + y_{n-1}$}
+        \mauvaise{$y_n = 0.5x_n + x_{n-1}$}
+        \mauvaise{$y_n = x_n + 0.5x_{n-1}$}
+        \mauvaise{$y_n = \frac{x_n}{1 + 0.5x_{n-1}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 - 0.5x_{n-1}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 - 0.5y_{n}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 + 0.5y_{n}}$}
+%        \bonne{Le filtre en question est stable.}
+%        \mauvaise{Le filtre en question est instable.}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD6}{%%% CF1 %%%
+  \begin{questionmult}{18-30-filtreNum1-2} 
+    \bareme{d=2-N,p=0}
+    Le filtre causal de fonction de
+    transfert en $z$ donnée par $H[z]=\frac{1}{1-0.5z^{-1}}$
+%    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{est stable.}
+        \mauvaise{est instable.}
+%        \bonne{est un filtre AR.}
+%        \mauvaise{est un filtre MA.}
+        \bonne{est de réponse impulsionnelle infinie.}
+        \mauvaise{est de réponse impulsionnelle finie.}
+      \end{reponses}
+%    \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD6}{%%% CF1 %%%
+  \begin{question}{18-31-filtreNum2-1} On note $x_n$ l'entrée et $y_n$ la
+    sortie du filtre causal de fonction de transfert en $z$ donnée par
+    $H[z]=\frac{1}{1-2z^{-1}}$. La relation de récurrence entrée-sortie est
+    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$y_n = x_n + 2y_{n-1}$}
+        \mauvaise{$y_n = x_n - 2y_{n-1}$}
+        \mauvaise{$y_n = 2x_n + y_{n-1}$}
+        \mauvaise{$y_n = 2x_n + x_{n-1}$}
+        \mauvaise{$y_n = x_n + 2x_{n-1}$}
+        \mauvaise{$y_n = \frac{x_n}{1 + 2x_{n-1}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 - 2x_{n-1}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 - 2y_{n}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 + 2y_{n}}$}
+%        \bonne{Le filtre en question est stable.}
+%        \mauvaise{Le filtre en question est instable.}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD6}{%%% CF1 %%%
+  \begin{questionmult}{18-32-filtreNum2-2} 
+    \bareme{d=2-N,p=0}
+    Le filtre causal de fonction de transfert en $z$ donnée par
+    $H[z]=\frac{1}{1-2z^{-1}}$
+%    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \mauvaise{est stable.}
+        \bonne{est instable.}
+%        \bonne{est un filtre AR.}
+%        \mauvaise{est un filtre MA.}
+        \bonne{est de réponse impulsionnelle infinie.}
+        \mauvaise{est de réponse impulsionnelle finie.}
+      \end{reponses}
+%    \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD6}{%%% CF2 %%%
+  \begin{question}{18-33-filtreNum3-1} On note $x_n$ l'entrée et $y_n$ la
+    sortie du filtre causal de fonction de transfert en $z$ donnée par
+    $H[z]=1-0.5z^{-1}$. La relation de récurrence entrée-sortie est
+    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$y_n = x_n - 0.5x_{n-1}$}
+        \mauvaise{$y_n = x_n + 0.5y_{n-1}$}
+        \mauvaise{$y_n = x_n - 0.5y_{n-1}$}
+        \mauvaise{$y_n = 0.5x_n + x_{n-1}$}
+        \mauvaise{$y_n = x_n + 0.5x_{n-1}$}
+        \mauvaise{$y_n = \frac{x_n}{1 + 0.5x_{n-1}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 - 0.5x_{n-1}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 - 0.5y_{n}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 + 0.5y_{n}}$}
+%        \bonne{Le filtre en question est stable.}
+%        \mauvaise{Le filtre en question est instable.}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD6}{%%% CF2 %%%
+  \begin{questionmult}{18-34-filtreNum3-2} 
+    \bareme{d=2-N,p=0} 
+    Le filtre causal de fonction de transfert en $z$ donnée par
+    $H[z]=1-0.5z^{-1}$
+%    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{est stable.}
+        \mauvaise{est instable.}
+%        \bonne{est un filtre MA.}
+%        \mauvaise{est un filtre AR.}
+        \mauvaise{est de réponse impulsionnelle infinie.}
+        \bonne{est de réponse impulsionnelle finie.}
+      \end{reponses}
+%    \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD6}{%%% CF2 %%%
+  \begin{question}{18-35-filtreNum4-1} On note $x_n$ l'entrée et $y_n$ la
+    sortie du filtre causal de fonction de transfert en $z$ donnée par
+    $H[z]=1-2z^{-1}$. La relation de récurrence entrée-sortie est
+    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$y_n = x_n - 2x_{n-1}$}
+        \mauvaise{$y_n = x_n + 2y_{n-1}$}
+        \mauvaise{$y_n = x_n - 2y_{n-1}$}
+        \mauvaise{$y_n = 2x_n + x_{n-1}$}
+        \mauvaise{$y_n = x_n + 2x_{n-1}$}
+        \mauvaise{$y_n = \frac{x_n}{1 + 2x_{n-1}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 - 2x_{n-1}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 - 2y_{n}}$}
+        \mauvaise{$y_n = \frac{x_n}{1 + 2y_{n}}$}
+%        \bonne{Le filtre en question est stable.}
+%        \mauvaise{Le filtre en question est instable.}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD6}{%%% CF2 %%%
+  \begin{questionmult}{18-36-filtreNum4-2} 
+    \bareme{d=2-N,p=0}
+    Le filtre causal de fonction de transfert en $z$ donnée par
+    $H[z]=1-2z^{-1}$
+%    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{est stable.}
+        \mauvaise{est instable.}
+%        \bonne{est un filtre MA.}
+%        \mauvaise{est un filtre AR.}
+        \mauvaise{est de réponse impulsionnelle infinie.}
+        \bonne{est de réponse impulsionnelle finie.}
+      \end{reponses}
+%    \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD7}{%%% CF1 %%%
+  \begin{question}{18-37-densiteSpecSomme-1}
+%    \begin{multicols}{3}\AMCBoxedAnswers
+    On considère deux filtres attaqués en entrée par un même signal
+    $x(t)$. Le premier filtre a pour réponse en fréquence $A(f)$ et sa
+    sortie est notée $y(t)$, tandis que le deuxième filtre a pour
+    réponse en fréquence $B(f)$ et sa sortie est notée $z(t)$. Pour
+    tout signal $s(t)$, on note $\Gamma_s(f)$ sa densité spectrale
+    (puissance ou énergie selon le cas).
+    
+      \begin{reponses}
+        \bonne{$\Gamma_{y-z}(f) = |A(f)-B(f)|^2\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y-z}(f) = |A(f)|^2-|B(f)|^2\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y-z}(f) = |A(f)|^2+|B(f)|^2\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y-z}(f) = |A(f)-B(f)|\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y-z}(f) = |A(f)|-|B(f)|\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y-z}(f) = |A(f)|+|B(f)|\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y-z}(f) = \Gamma_y(f) - \Gamma_z(f)$}
+        \mauvaise{$\Gamma_{y-z}(f) = \Gamma_y(f) + \Gamma_z(f)$}
+      \end{reponses}
+%    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD7}{%%% CF2 %%%
+  \begin{question}{18-38-densiteSpecSomme-2}
+%    \begin{multicols}{3}\AMCBoxedAnswers
+    On considère deux filtres attaqués en entrée par un même signal
+    $x(t)$. Le premier filtre a pour réponse en fréquence $A(f)$ et sa
+    sortie est notée $y(t)$, tandis que le deuxième filtre a pour
+    réponse en fréquence $B(f)$ et sa sortie est notée $z(t)$. Pour
+    tout signal $s(t)$, on note $\Gamma_s(f)$ sa densité spectrale
+    (puissance ou énergie selon le cas).
+    
+      \begin{reponses}
+        \bonne{$\Gamma_{y+z}(f) = |A(f)+B(f)|^2\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y+z}(f) = |A(f)|^2+|B(f)|^2\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y+z}(f) = |A(f)|^2-|B(f)|^2\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y+z}(f) = |A(f)+B(f)|\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y+z}(f) = |A(f)|+|B(f)|\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y+z}(f) = |A(f)|-|B(f)|\Gamma_x(f)$}
+        \mauvaise{$\Gamma_{y+z}(f) = \Gamma_y(f) + \Gamma_z(f)$}
+        \mauvaise{$\Gamma_{y+z}(f) = \Gamma_y(f) - \Gamma_z(f)$}
+      \end{reponses}
+%    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD7}{%%% CF1 %%%
+  \begin{question}{18-39-exFiltrage-1} On considère l'opération qui à
+    un signal à temps continu $x(t)$ associe le signal $y(t)$ défini
+    par:
+   \[
+   y(t)=\int_{t}^{t+\alpha} x(\theta) \;d\theta \qquad \text{avec $\alpha>0$.}
+   \]
+   \begin{reponses}
+   \bonne{ C'est une opération de filtrage par un filtre non causal dont
+     la réponse impulsionnelle est donnée par:
+     \[
+     h(\theta)=
+     \begin{cases}
+       1 & \text{si } \theta\in[-\alpha,0] \\
+       0 & \text{sinon.}
+     \end{cases}
+     \]}
+   \mauvaise{ C'est une opération de filtrage par un filtre causal dont
+     la réponse impulsionnelle est donnée par:
+     \[
+     h(\theta)=
+     \begin{cases}
+       1 & \text{si } \theta\in[0,\alpha] \\
+       0 & \text{sinon.}
+     \end{cases}
+     \]}
+   \mauvaise{ C'est une opération de filtrage par un filtre non causal dont
+     la réponse impulsionnelle est donnée par:
+     \[
+     h(\theta)=
+     \begin{cases}
+       x(\theta) & \text{si } \theta\in[t,t+\alpha] \\
+       0 & \text{sinon.}
+     \end{cases}
+     \]}
+   \mauvaise{ C'est une opération de filtrage par un filtre causal dont la
+     réponse impulsionnelle est donnée par:
+     \[
+     h(\theta)= 
+     \begin{cases}
+       x(\theta) & \text{si } \theta\in[t,t+\alpha] \\
+       0 & \text{sinon.}
+     \end{cases}
+     \]}
+   \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD7}{%%% CF2 %%%
+  \begin{question}{18-40-exFiltrage-2} On considère l'opération qui à
+    un signal à temps continu $x(t)$ associe le signal $y(t)$ défini
+    par:
+   \[
+   y(t)=\int_{t-\alpha}^{t} x(\theta) \;d\theta \qquad \text{avec $\alpha>0$.}
+   \]
+   \begin{reponses}
+   \mauvaise{ C'est une opération de filtrage par un filtre non causal dont
+     la réponse impulsionnelle est donnée par:
+     \[
+     h(\theta)=
+     \begin{cases}
+       1 & \text{si } \theta\in[-\alpha,0] \\
+       0 & \text{sinon.}
+     \end{cases}
+     \]}
+   \bonne{ C'est une opération de filtrage par un filtre causal dont
+     la réponse impulsionnelle est donnée par:
+     \[
+     h(\theta)=
+     \begin{cases}
+       1 & \text{si } \theta\in[0,\alpha] \\
+       0 & \text{sinon.}
+     \end{cases}
+     \]}
+   \mauvaise{ C'est une opération de filtrage par un filtre non causal dont
+     la réponse impulsionnelle est donnée par:
+     \[
+     h(\theta)=
+     \begin{cases}
+       x(\theta) & \text{si } \theta\in[t-\alpha,t] \\
+       0 & \text{sinon.}
+     \end{cases}
+     \]}
+   \mauvaise{ C'est une opération de filtrage par un filtre causal dont la
+     réponse impulsionnelle est donnée par:
+     \[
+     h(\theta)= 
+     \begin{cases}
+       x(\theta) & \text{si } \theta\in[t-\alpha,t] \\
+       0 & \text{sinon.}
+     \end{cases}
+     \]}
+   \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD7}{%%% CF1 et CF2 %%%
+  \begin{question}{18-41-modulation} Dans une modulation:
+  \begin{reponses}
+    \mauvaise{ Le signal qui contient l'information en bande de base
+      est appelé porteuse.}
+
+    \bonne{ Le signal qui contient l'information en bande de base est
+      appelé signal modulant.}
+
+    \mauvaise{ Le signal modulé est une sinusoïde pure.}
+
+    \mauvaise{ Le signal modulé est toujours obtenu à partir de la
+      transformée de Hilbert du signal modulant.}
+  \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD7}{%%% CF1 et CF2 %%%
+  \begin{question}{18-41-modulation} Dans une modulation:
+  \begin{reponses}
+    \mauvaise{ Le signal qui contient l'information en bande de base
+      est appelé porteuse.}
+
+    \bonne{ Le signal qui contient l'information en bande de base est
+      appelé signal modulant.}
+
+    \mauvaise{ Le signal modulé est une sinusoïde pure.}
+
+    \mauvaise{ Le signal modulé est toujours obtenu à partir de la
+      transformée de Hilbert du signal modulant.}
+  \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-TD7}{%%% CF1 %%%
+  \begin{question}{18-42-stabiliteFitreTC-1} Un filtre à temps continu
+    est stable au sens entrée bornée-sortie bornée si et seulement si:
+   \begin{reponses}
+     \bonne{ sa réponse impulsionnelle $h(t)$ satisfait:
+       $\int_{-\infty}^{+\infty} |h(t)| \,dt < +\infty$.}
+
+     \mauvaise{ la réponse à un Dirac en entrée est de durée finie.}
+
+     \mauvaise{ sa réponse impulsionnelle $h(t)$ satisfait:
+       $\lim_{t\to+\infty} h(t) = 0$.}
+
+     \mauvaise{ les pôles de sa réponse impulsionnelle sont de module
+       inférieur à un.}
+
+     \mauvaise{ sa réponse impulsionnelle satisfait $h(t)=0$ pour tout
+       $t<0$.}
+    \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-TD7}{%%% CF2 %%%
+  \begin{question}{18-43-stabiliteFitreTC-2} Un filtre à temps continu
+    est stable au sens entrée bornée-sortie bornée si et seulement si:
+   \begin{reponses}
+     \bonne{ sa réponse impulsionnelle $h(t)$ satisfait:
+       $\int_{-\infty}^{+\infty} |h(t)| \,dt < +\infty$.}
+
+     \mauvaise{ sa réponse impulsionnelle $h(t)$ satisfait:
+       $\int_{-\infty}^{+\infty} |h(t)|^2 \,dt < +\infty$.}
+
+     \mauvaise{ les pôles de sa réponse impulsionnelle sont à partie
+       réelle négative.}
+     
+     \mauvaise{ la réponse à une entrée de durée finie est de durée finie.}
+
+     \mauvaise{ sa réponse impulsionnelle satisfait $h(t)=0$ pour tout
+       $t<0$.}
+    \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C8}{%%% CF1 %%%
+  \begin{question}{18-44-sigAnalytique} Soit $x(t)$ un signal réel et $X(f)$ sa
+    transformée de Fourier. Rappelons que le signal analytique
+    $z_x(t)$ associé au signal réel $x(t)$ peut {\^e}tre défini par sa
+    transformée de Fourier:
+   \[
+   Z_x(f) =
+   \begin{cases}
+     2X(f) & \text{ si } f\geq0, \\
+     0    & \text{ si } f<0.
+   \end{cases}
+   \]
+   \begin{reponses}
+     \mauvaise{ La transformation de $x(t)$ en signal analytique
+       $z_x(t)$ est indispensable avant toute analyse à l'analyseur de
+       spectre car seules les fréquences positives existent.}
+
+     \mauvaise{ Le signal analytique $z_x(t)$ est un signal à valeurs
+       réelles.}
+
+     \bonne{ Le signal analytique $z_x(t)$ est un signal à valeurs
+       complexes.}
+
+     \mauvaise{ Le signal analytique $z_x(t)$ peut {\^e}tre à valeurs
+       réelles ou complexes, celà dépend du signal $x(t)$.}
+   \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C8}{%%% CF2 %%%
+  \begin{question}{18-45-tHilbert1} Soit $x(t)$ un signal à temps continu et
+    valeurs réelles, $z_x(t)$ son signal analytique associé,
+    $\widehat{x}(t)$ sa transformée de Hilbert et $\xi_x(t)$ son
+    enveloppe complexe.
+  \begin{reponses}
+    \mauvaise{ $z_x(t)$ est à valeurs réelles car son spectre ne
+      contient que des fréquences positives, les seules qui aient un
+      sens physique.}
+
+    \mauvaise{ $\xi_x(t)$ est à valeurs complexes tandis que $z_x(t)$
+      est à valeurs réelles.}
+
+    \bonne{ Le signal $x(t)$ est la partie réelle de $z_x(t)$ et
+      $\widehat{x}(t)$ est la partie imaginaire de $z_x(t)$.}
+
+    \mauvaise{ $\widehat{x}(t)$ ne peut pas {\^e}tre la partie
+      imaginaire de $z_x(t)$ car $\widehat{x}(t)$ est un signal à
+      valeurs complexes.}
+  \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C8}{%%% CF1 %%%
+  \begin{questionmult}{18-46-tHilbertCos} 
+    \bareme{d=2-N,p=0}
+    La transformée de Hilbert du signal $x(t)=\cos(2\pi f_0t)$ (o{\`u}
+    $f_0$ est une constante positive):
+   \begin{reponses}
+     \mauvaise{ vaut
+       $\widehat{x}(t)=\frac{1}{2}\Big(\delta(f-f_0)+\delta(f+f_0)\Big)$. En
+       effet, on peut écrire
+       $x(t)=\frac{1}{2}(e^{\ic2\pi f_0t}+e^{-\ic2\pi f_0t})$ et on
+       sait que la transformée de Hilbert de l'exponentielle est un
+       Dirac, noté ici $\delta$.}
+
+     \mauvaise{ vaut
+       $\widehat{x}(t)=\frac{1}{2\ic}\Big(\delta(f-f_0)-\delta(f+f_0)\Big)$.
+       En effet, on peut écrire
+       $x(t)=\frac{1}{2\ic}(e^{\ic2\pi f_0t}-e^{-\ic2\pi f_0t})$ et on
+       sait que la transformée de Hilbert de l'exponentielle est un
+       Dirac, noté $\delta$.}
+
+     \bonne{ vaut $\widehat{x}(t)=\sin(2\pi f_0t)$.}
+     %Le signal analytique associé à $x(t)$ est alors bien $e^{\ic2\pi f_0t}=x(t)+\ic\widehat{x}(t)$.}
+     \mauvaise{ vaut $\widehat{x}(t)=-\sin(2\pi f_0t)$.}
+     \mauvaise{ vaut $\widehat{x}(t)= \cos (2\pi f_0t)$.}
+     \mauvaise{ vaut $\widehat{x}(t)= -\cos (2\pi f_0t)$.}
+     \bonne{ vaut
+       $\widehat{x}(t)=\frac{1}{2}(e^{\ic2\pi
+         f_0t-\ic\pi/2}+e^{-\ic2\pi f_0t+\ic\pi/2})$.
+       En effet, on peut écrire
+       $x(t)=\frac{1}{2}(e^{\ic2\pi f_0t}+e^{-\ic2\pi f_0t})$ et on
+       sait que la transformée de Hilbert d'une exponentielle pure est
+       obtenue par un déphasage pur de $-\pi/2$ pour une fréquence
+       positive et $+\pi/2$ pour une fréquence négative.}
+   \end{reponses}
+\end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C8}{%%% CF2 %%%
+  \begin{questionmult}{18-47-tHilbertSin} 
+    \bareme{d=2-N,p=0}
+    La transformée de Hilbert du signal $x(t)=\sin(2\pi f_0t)$ (o{\`u}
+    $f_0$ est une constante positive):
+   \begin{reponses}
+     \mauvaise{ vaut
+       $\widehat{x}(t)=\frac{1}{2}\Big(\delta(f-f_0)+\delta(f+f_0)\Big)$. En
+       effet, on peut écrire
+       $x(t)=\frac{1}{2}(e^{\ic2\pi f_0t}+e^{-\ic2\pi f_0t})$ et on
+       sait que la transformée de Hilbert de l'exponentielle est un
+       Dirac, noté ici $\delta$.}
+
+     \mauvaise{ vaut
+       $\widehat{x}(t)=\frac{1}{2\ic}\Big(\delta(f-f_0)-\delta(f+f_0)\Big)$.
+       En effet, on peut écrire
+       $x(t)=\frac{1}{2\ic}(e^{\ic2\pi f_0t}-e^{-\ic2\pi f_0t})$ et on
+       sait que la transformée de Hilbert de l'exponentielle est un
+       Dirac, noté $\delta$.}
+
+     \mauvaise{ vaut $\widehat{x}(t)= \sin(2\pi f_0t)$.}
+     \mauvaise{ vaut $\widehat{x}(t)= -\sin(2\pi f_0t)$.}
+     \mauvaise{ vaut $\widehat{x}(t)= \cos(2\pi f_0t)$.}
+     \bonne{ vaut $\widehat{x}(t)=-\cos(2\pi f_0t)$.}
+     
+     \mauvaise{ vaut
+       $\widehat{x}(t)=\frac{1}{2\ic}(-e^{\ic2\pi
+         f_0t-\ic\pi/2}+e^{-\ic2\pi f_0t+\ic\pi/2})$.
+       En effet, on peut écrire
+       $x(t)=\frac{1}{2\ic}(e^{\ic2\pi f_0t}-e^{-\ic2\pi f_0t})$ et on
+       sait que la transformée de Hilbert multiplie les fréquences
+       positives par $+1$ et les fréquences négatives par $-1$.}
+
+     % \mauvaise{ vaut $\widehat{x}(t)=\cos(2\pi f_0t)$. Le signal
+     %   analytique associé à $x(t)$ est alors bien
+     %   $e^{\ic2\pi f_0t}=x(t)+\ic\widehat{x}(t)$.}
+   \end{reponses}
+\end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-CTD9}{%%% CF1 et CF2 %%%
+  \begin{question}{18-48} Soit $(x_n)_{n\in\ZZ}$ un signal aléatoire
+    temps discret, à valeurs réelles, centré, stationnaire au sens
+    large et de fonction d'auto-corrélation
+    $(\gamma_x(k))_{k\in\ZZ}$. Alors, par définition:
+    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\gamma_x(k)=\E{x_nx_{n-k}}$}
+        \mauvaise{$\gamma_x(k)= \sum_{n\in\ZZ} x_nx_{n-k}$}
+        \mauvaise{$\gamma_x(k)= \lim_{N\to \infty}\frac{1}{2N+1}
+          \sum_{n=-N}^N x_nx_{n-k}$}
+        \mauvaise{$\gamma_x(k)= \sum_{n=-k}^k x_nx_{n-k}$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-CTD9}{%%% CF1 et CF2 %%%
+  \begin{question}{18-49} Soit $(x_n)_{n\in\ZZ}$ un signal aléatoire
+    temps discret, à valeurs réelles, stationnaire au sens
+    large. Alors:
+%    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\E{x_nx_{n-k}}$ ne dépend que de $k$ et pas de $n$.}
+        \mauvaise{$\E{x_nx_{n-k}}$ ne dépend que de $n$ et pas de $k$.}
+        \mauvaise{$\E{x_nx_{n-k}}$ dépend à la fois de $n$ et de $k$.}
+        \mauvaise{Si $(x_n)_{n\in\ZZ}$ n'est pas centré,
+          $\E{x_nx_{n-k}}$ dépend à la fois de $n$ et $k$.}
+      \end{reponses}
+%    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-CTD9}{%%% CF1 et CF2 %%%
+  \begin{question}{18-50} Soient $(x_n)_{n\in\ZZ}$ et $(y_n)_{n\in\ZZ}$
+    deux signaux aléatoires temps discret stationnaires au sens
+    large. On note de plus $z_n=x_n+y_n$. Les fonctions
+    d'auto-corrélation respectives sont notées $\gamma_x(k)$,
+    $\gamma_y(k)$ et $\gamma_z(k)$.
+%    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{si $(x_n)_{n\in\ZZ}$ et $(y_n)_{n\in\ZZ}$ sont
+          indépendants, $\gamma_z(k)=\gamma_x(k)+\gamma_y(k)$}
+
+        \mauvaise{par linéarité de l'espérance, on a toujours
+          $\gamma_z(k)=\gamma_x(k)+\gamma_y(k)$}
+
+        \mauvaise{si $(x_n)_{n\in\ZZ}$ et $(y_n)_{n\in\ZZ}$ sont
+          gaussiens, $\gamma_z(k)=\gamma_x(k)+\gamma_y(k)$}
+
+
+        \mauvaise{si $(x_n)_{n\in\ZZ}$ et $(y_n)_{n\in\ZZ}$ sont
+          centrés, $\gamma_z(k)=\gamma_x(k)+\gamma_y(k)$}
+      \end{reponses}
+%    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-CTD9}{%%% CF1 et CF2 %%%
+  \begin{question}{18-48} Soit $(x_n)_{n\in\ZZ}$ un signal aléatoire
+    temps discret, à valeurs réelles, centré, stationnaire au sens
+    large et de fonction d'auto-corrélation
+    $(\gamma_x(k))_{k\in\ZZ}$. Alors, par définition:
+    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\gamma_x(k)=\E{x_nx_{n-k}}$}
+        \mauvaise{$\gamma_x(k)= \sum_{n\in\ZZ} x_nx_{n-k}$}
+        \mauvaise{$\gamma_x(k)= \lim_{N\to \infty}\frac{1}{2N+1}
+          \sum_{n=-N}^N x_nx_{n-k}$}
+        \mauvaise{$\gamma_x(k)= \sum_{n=-k}^k x_nx_{n-k}$}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-CTD9}{%%% CF1 et CF2 %%%
+  \begin{question}{18-49} Soit $(x_n)_{n\in\ZZ}$ un signal aléatoire
+    temps discret, à valeurs réelles, stationnaire au sens
+    large. Alors:
+%    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\E{x_nx_{n-k}}$ ne dépend que de $k$ et pas de $n$.}
+        \mauvaise{$\E{x_nx_{n-k}}$ ne dépend que de $n$ et pas de $k$.}
+        \mauvaise{$\E{x_nx_{n-k}}$ dépend à la fois de $n$ et de $k$.}
+        \mauvaise{Si $(x_n)_{n\in\ZZ}$ n'est pas centré,
+          $\E{x_nx_{n-k}}$ dépend à la fois de $n$ et $k$.}
+      \end{reponses}
+%    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-CTD9}{%%% CF1 et CF2 %%%
+  \begin{question}{18-50} Soit $(x_n)_{n\in\ZZ}$ et $(y_n)_{n\in\ZZ}$
+    deux signaux aléatoires temps discret stationnaires au sens
+    large. On note de plus $z_n=x_n+y_n$. Les fonctions
+    d'auto-corrélation respectives sont notées $\gamma_x(k)$,
+    $\gamma_y(k)$ et $\gamma_z(k)$.
+%    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{si $x_n$ et $y_n$ sont indépendants,
+          $\gamma_z(k)=\gamma_x(k)+\gamma_y(k)$} 
+
+        \mauvaise{par linéarité de l'espérance, on a toujours
+          $\gamma_z(k)=\gamma_x(k)+\gamma_y(k)$}
+
+        \mauvaise{si $x_n$ et $y_n$ sont gaussiens,
+          $\gamma_z(k)=\gamma_x(k)+\gamma_y(k)$}
+
+
+        \mauvaise{si $x_n$ et $y_n$ sont centrés,
+          $\gamma_z(k)=\gamma_x(k)+\gamma_y(k)$}
+      \end{reponses}
+%    \end{multicols}
+  \end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-CTD9}{%%% CF1 %%%
+  \begin{questionmult}{18-51-predictLin} 
+    \bareme{d=2-N,p=0} 
+    Soit $(x_n)_{n\in\ZZ}$ un signal aléatoire à
+    valeurs réelles, stationnaire au sens large, centré et de fonction
+    d'autocorrélation $\gamma_x(k)$. Soit $\hat{x}_n$ la prédiction
+    linéaire de $x_n$ à partir de $x_{n-1}$ qui minimise l'erreur
+    quadratique moyenne $\E{(\hat{x}_n-x_n)^2}$.
+    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\hat{x}_n = \frac{\gamma_x(1)}{\gamma_x(0)} x_{n-1}$.}
+        % \mauvaise{$\hat{x}_n = \frac{\gamma_x(0)}{\gamma_x(1)}
+        %   x_{n-1}$.}
+        \mauvaise{$\hat{x}_n =
+          \frac{\gamma_x(1)-\gamma_x(0)}{\gamma_x(0)} x_{n-1}$.}
+        % \mauvaise{$\hat{x}_n = \gamma_x(0)x_n + \gamma_x(1)x_{n-1}$.}
+       \mauvaise{$\hat{x}_n = \sum_{k\in\ZZ} \gamma_x(k)x_{n-k}$.}
+        \bonne{$\hat{x}_n$ est tel que $\E{(\hat{x}_n-x_n)x_{n-1}}=0$.}
+        \mauvaise{$\hat{x}_n$ est tel que $\E{(\hat{x}_n-x_{n-1})x_{n-1}}=0$.}
+ %       \mauvaise{$\hat{x}_n$ est tel que $\E{(x_n-x_{n-1})\hat{x}_{n}}=0$.}
+      \end{reponses}
+    \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-CTD9}{%%% CF2 %%%
+  \begin{questionmult}{18-52-predictLin} 
+    \bareme{d=2-N,p=0}
+    Soit $(x_n)_{n\in\ZZ}$ un signal aléatoire à valeurs réelles,
+    stationnaire au sens large, centré et de fonction
+    d'autocorrélation $\gamma_x(k)\defeq\E{x_nx_{n-k}}$. Soit
+    $\hat{x}_n$ la prédiction linéaire de $x_n$ à partir de $x_{n-1}$
+    qui minimise l'erreur quadratique moyenne $\E{(\hat{x}_n-x_n)^2}$.
+    \begin{multicols}{2}\AMCBoxedAnswers
+      \begin{reponses}
+        \bonne{$\hat{x}_n = \frac{\gamma_x(1)}{\gamma_x(0)} x_{n-1}$.}
+        \mauvaise{$\hat{x}_n = \frac{\gamma_x(0)}{\gamma_x(1)}
+          x_{n-1}$.}
+        % \mauvaise{$\hat{x}_n =
+        %   \frac{\gamma_x(1)-\gamma_x(0)}{\gamma_x(0)} x_{n-1}$.}
+        \mauvaise{$\hat{x}_n = \gamma_x(0)x_n + \gamma_x(1)x_{n-1}$.}
+        % \mauvaise{$\hat{x}_n = \sum_{k\in\ZZ} \gamma_x(k)x_{n-k}$.}
+        % \bonne{$\hat{x}_n$ est tel que $\E{(\hat{x}_n-x_n)x_{n-1}}=0$.}
+        \mauvaise{$\hat{x}_n$ est tel que $\E{(\hat{x}_n-x_{n-1})x_{n-1}}=0$.}
+        \mauvaise{$\hat{x}_n$ est tel que $\E{(x_n-x_{n-1})\hat{x}_{n}}=0$.}
+      \end{reponses}
+    \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF1}{%-C10}{%%% CF1 %%%
+  \begin{questionmult}{18-52-BruitBlanc-1} 
+    \bareme{d=2-N,p=0}
+    Soit un signal aléatoire $(x_n)_{n\in\ZZ}$ stationnaire et centré
+    dont la fonction d'autocorrélation est donnée par
+    $\gamma_x(k)=
+    \begin{cases}
+      1 & \text{si } k=0,\\
+      0 & \text{sinon.}
+    \end{cases}$
+    % \begin{multicols}{3}\AMCBoxedAnswers
+    \begin{reponses}
+      \bonne{$(x_n)_{n\in\ZZ}$ est un bruit blanc de puissance $1$.}
+      \mauvaise{$(x_n)_{n\in\ZZ}$ est un bruit coloré de puissance $1$.}
+      \mauvaise{$(x_n)_{n\in\ZZ}$ est une impulsion de Dirac.}
+      \mauvaise{$(x_n)_{n\in\ZZ}$ est un échelon unité.}
+      \bonne{$(x_n)_{n\in\ZZ}$ a une densité spectrale de puissance
+        constante.}
+    \end{reponses}
+    % \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{CF2}{%-C10}{%%% CF2 %%%
+  \begin{questionmult}{18-53-BruitBlanc-2}  
+    \bareme{d=2-N,p=0}
+    Soit un signal aléatoire $(x_n)_{n\in\ZZ}$ stationnaire et centré
+    dont la fonction densité spectrale est constante $\Gamma_x(f)=1$.
+%    \begin{multicols}{3}\AMCBoxedAnswers
+      \begin{reponses}
+      \bonne{$(x_n)_{n\in\ZZ}$ est un bruit blanc de puissance $1$.}
+      \mauvaise{$(x_n)_{n\in\ZZ}$ est un bruit coloré de puissance $1$.}
+      \mauvaise{$(x_n)_{n\in\ZZ}$ est une impulsion de Dirac.}
+      \mauvaise{$(x_n)_{n\in\ZZ}$ est un échelon unité.}
+      \bonne{$(x_n)_{n\in\ZZ}$ a pour fonction d'autocorrélation un Dirac.}
+      \end{reponses}
+%    \end{multicols}
+  \end{questionmult}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \element{}{
+%   \begin{question}{}
+% %    \begin{multicols}{3}\AMCBoxedAnswers
+%       \begin{reponses}
+%       \end{reponses}
+% %    \end{multicols}
+%   \end{question}
+% }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{quSuppl}{
+  \begin{question}{18-23-s5-FFT-Suppl} L'algorithme de Transformée de
+    Fourier Rapide (ou FFT):
+	\begin{reponses}
+          \mauvaise{ est un algorithme rapide de calcul de transformée
+            de Fourier à temps continu.}
+
+          \mauvaise{ est un algorithme rapide de calcul temps réel de
+            la transformée de Fourier d'un signal analogique.}
+
+          \mauvaise{ effectue un produit matriciel de transformée de
+            Fourier discrète lorsque le nombre d'échantillons est un
+            multiple de 2.}
+
+          \bonne{ effectue un produit matriciel de transformée de
+            Fourier discrète lorsque le nombre d'échantillons est une
+            puissance de 2.}
+      \end{reponses}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\element{BonusMalus}{
+  \begin{question}{BonusMalus} Cette question permet l'attribution
+    de points bonus/malus selon le respect ou non des
+    consignes. \textbf{Ne pas y répondre} (elle sera complétée par le
+    correcteur) et vérifier les consignes: indication des noms et
+    prénoms (deux fois), cases correctement noircies,\dots.
+    \AMCOpen{lines=0,lineheight=0cm,dots=false}{\wrongchoice[F]{f}\scoring{0}\wrongchoice[P]{p}\scoring{1}\correctchoice[J]{j}\scoring{4}}
+\end{question}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\onecopy{1}{    
+  % \exemplaire idem mais prend des valeurs par defaut et celles en
+  % francais pour \AMCtext{none}{...}
+
+  % \fancyhead[C]{\AMCIDBoxesABC un fancy head} 
+  % \fancyfoot[C]{Nom et prénom:}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% debut de l'en-tête du sujet:
+%\noindent{\bf QCM  \hfill TEST}
+%\vspace*{.5cm}
+\noindent%\fbox{
+\includegraphics[height=1.5cm]{TSPbleu.eps}
+  \begin{minipage}[b]{5cm}%{.5\linewidth}
+    \centering\large\bf 
+    \titreExam
+\end{minipage}
+%}
+%\champnom{
+  \fbox{    
+                \begin{minipage}[b]{.5\linewidth}
+                  NOM et prénom:
+                  \vspace*{3mm}
+                  
+                  \textsf{\large \color{black!25} (A reporter ici \textbf{\color{black!30} et} sur la feuille de réponses)}
+
+                  %\vspace*{.5cm}\dotfill
+                  \vspace*{1mm}
+                \end{minipage}
+         }
+%       } %fin \champnom
+
+\begin{center}\em
+  Durée : 1h30
+
+  Aucun document ni appareil électronique (calculatrice,
+  téléphone,\dots) n'est autorisé.
+
+  Les questions indiquant \multiSymbole{} peuvent avoir aucun, une ou
+  plusieurs bonnes réponses. \\ Les autres questions ont une unique
+  bonne réponse.
+  
+  \hrule \vspace{1em}
+  \textsc{Les réponses doivent être données sur la 
+    \textbf{fiche séparée de réponses} à la fin. \\
+    Les \textbf{bonnes réponses} doivent y être 
+    \textbf{complètement noircies}. \\
+    Aucune réponse dans la partie sujet ne sera prise en compte.}
+%  \textsc{\textbf{Il est impératif de noircir complètement les cases
+%      des bonnes réponses.}}  
+  \vspace{1em} \hrule
+\end{center}
+\vspace{1ex}
+
+%%% fin de l'en-tête du sujet
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% en-tête secondaire du sujet %%%%%%%
+\underline{Conventions et notations}: dans ce sujet, on notera:
+\begin{itemize}
+\item $\indic_E$ est la fonction indicatrice ($\indic_E(x)=1$ si
+  $x\in E$ et $0$ sinon); $\sinc(x)=\frac{\sin x}{x}$ est la fonction
+  sinus-cardinal; $\delta$ désigne l'impulsion de Dirac.
+\item $\EE$ est l'espérance mathématique.
+\item La convention prise pour la transformée de Fourier temps continu
+  d'un signal $x(t)$ est $X(f)=\int_\RR x(t)e^{-\ic 2\pi ft}\;dt$, où
+  la majuscule désigne la transformée de Fourier correspondante.
+\end{itemize}
+%%% fin en-tête secondaire du sujet %%%
+
+%%%%\setgroupmode{groupeQu}{withoutreplacement} --> ne marche pas. Pb version??
+%\restituegroupe{BonusMalus}
+\melangegroupe{\noCF}
+\restituegroupe{\noCF}
+% %\restituegroupe{quNonClassee}
+% \restituegroupe{\noCF-CTD1}
+% %\hrule
+% \restituegroupe{\noCF-C2}
+% %\hrule
+% \restituegroupe{\noCF-C3}
+% \restituegroupe{\noCF-TD3}
+% %\hrule
+% \restituegroupe{\noCF-C4}
+% \restituegroupe{\noCF-TD4}
+% %\hrule
+% \restituegroupe{\noCF-C5}
+% %\hrule
+% \restituegroupe{\noCF-C6}
+% \restituegroupe{\noCF-TD6}
+% %\hrule
+% \restituegroupe{\noCF-TD7}
+% %\hrule
+% \restituegroupe{\noCF-C8}
+% %\hrule
+% \restituegroupe{\noCF-CTD9}
+% %\hrule
+% \restituegroupe{\noCF-C10}
+
+
+%% saut de page avant formulaire (+page blanche selon nb pages)
+\AMCcleardoublepage
+%% minimum 3 pages
+% %\AMCaddpagesto{3} 
+
+%%%% formulaire de réponse %%%%%%%%%%%%
+%% declaration début formulaire reponse
+\AMCdebutFormulaire
+
+%% début en-tête feuille de réponses : à utiliser avec option ensemble
+%\noindent{\bf QCM  \hfill TEST}
+%\vspace*{.5cm}
+
+\begin{minipage}{.4\linewidth}
+  \centering\large\bf 
+  Examen SIC3601
+  Contrôle final 1 \\ 27/04/2018
+\end{minipage}
+\champnom{\fbox{    
+                \begin{minipage}{.5\linewidth}
+                  NOM et prénom:
+
+                  \vspace*{.5cm}\dotfill
+                  \vspace*{1mm}
+                \end{minipage}
+         }}
+
+\begin{center}
+  \hrule \vspace{1em}
+  {{Les réponses sont à donner sur cette feuille uniquement.}} \\
+  
+  Il est impératif de \textsc{\textbf{noircir complètement les cases
+      des bonnes réponses.}}
+
+  \textsc{Pas de croix, ni de cases entourées, Stylo noir ou bleu
+    foncé uniquement.}
+
+  \vspace{1em} \hrule
+\end{center}
+\vspace{1ex}
+%% fin en-tête feuille de réponses
+%% cases du formulaire de réponses
+%\begin{multicols}{2}\setlength{\parindent}{0pt}     
+\formulaire
+%\end{multicols}
+%%%% fin formulaire de réponse %%%%%%%%
+}   
+\end{document}
+

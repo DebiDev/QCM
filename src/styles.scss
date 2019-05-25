@@ -1,0 +1,103 @@
+/*Import default theme for Angular Materials*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/*Global CSS*/
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0px 0px 0px 0px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+/*For expansion-panel*/
+.mat-expansion-panel-header-description {
+	color: rgba(0,0,0,0.9) !important;
+}
+
+.mat-expansion-panel-header {
+	border-top: 1px solid rgba(0,0,0,0.15);
+	height: auto !important;
+	padding-bottom: 5px !important;
+	padding-top: 5px !important;
+	min-height: 48px;
+}
+
+.mat-expansion-panel-header-description, .mat-dialog-content {
+	display:block !important;
+
+	.mat-form-field {
+		width: 100%;
+	}
+
+
+
+	.mat-action-row {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.answerDisplayer, .answerModif {
+	margin-bottom: 5px;
+	margin-top: 5px;
+	height: auto !important;
+	min-height: 80px !important;
+	width: 100% !important;
+	display: flex;
+	align-items: center;
+		justify-content: center;
+	justify-content: space-between;
+
+	h3 {
+		margin-left: 10px;
+	}
+
+	mathjax {
+		width: calc(100% - 100px);
+	}
+}
+
+.answer-correct {
+	color: green;
+}
+
+.answer-wrong {
+	color: red;
+}
+
+.mat-radio-label {
+	white-space: normal !important;
+}
+
+/*For Mat-input*/
+.mat-form-field-infix {
+	border: 1px solid #3f51b5;
+	border-radius: 5px;
+	padding: 5px !important;
+	margin-right: 5px;
+}
+
+.mat-form-field-underline {
+	height: 0px !important;
+}
+
+.mat-form-field-label-wrapper {
+	top: -1em;
+	.mat-form-field-label {
+		font-size: 18px !important;
+		color: #3f51b5 !important;
+	}
+}
+
+/*Diseable Ripple effect*/
+.mat-form-field-ripple {
+	height: 0px !important;
+}
+
+

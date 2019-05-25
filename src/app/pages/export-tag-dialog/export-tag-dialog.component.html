@@ -1,0 +1,19 @@
+<div>
+	<p>Voulez-vous ajouter un tag commun à toutes les questions ? (Si vous ne mettez rien, ce ne sera pas pris en compte)</p>
+  <mat-form-field floatLabel="always">
+	<mat-label>Nom du tag commun :</mat-label>
+    <input matInput [(ngModel)]="tagName">
+  </mat-form-field>
+  <mat-checkbox color="primary" #offsetRadio>
+  	Commencer les numéros avec un offset ?
+  </mat-checkbox>
+  <mat-form-field class="offsetInput" floatLabel="always" *ngIf="offsetRadio.checked">
+	<mat-label>Offset :</mat-label>
+    <input matInput [(ngModel)]="offset">
+  </mat-form-field>
+  <p *ngIf="tagName"> Tag de la première question : {{tagName}}-{{offset}} </p>
+  <div class="positionButton">
+	<button mat-raised-button (click)="cancel()" color="basic">Annuler</button>
+	<button mat-raised-button (click)="confirm()" color="primary">Confirmer</button>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div scrollY="true" class="scroll">
+	<p>
+	  Quel mode d'exportation voulez-vous utiliser ? 
+	</p>
+	<div class="exportModalContainer">
+		<mat-form-field floatLabel="always">
+	      <mat-label>Nom du element{{'{}'}} :</mat-label>
+	      <input matInput [matAutocomplete]="auto" [(ngModel)]="question.element">
+	      <mat-autocomplete #auto="matAutocomplete">
+	        <mat-option *ngFor="let e of allElements" [value]="e">
+	          {{e}}
+	        </mat-option>
+	      </mat-autocomplete>
+	    </mat-form-field>
+		<mat-radio-group>
+		  <mat-radio-button color="primary" checked="true" [value]="classic">
+		    Classique (Ajout normal de la question)
+		  </mat-radio-button>
+		  <mat-radio-button color="primary" #specificExport [value]="specific">
+		    Spécifique (Création de toutes les possibilités existantes par rapport aux réponses selectionnées)
+		  </mat-radio-button>
+		</mat-radio-group>
+		<div *ngIf="specificExport.checked">
+			<p>
+			  Combien de bonnes réponses voulez-vous ?
+			</p>
+			<mat-chip-list>
+  				<mat-chip (click)="changeGoodSelected(ind)" [selected]="goodSelected[ind]" color="primary" *ngFor="let a of goodAnswers; let ind = index">{{ind + 1}}</mat-chip>
+  			</mat-chip-list>
+  			<p>
+			  Combien de mauvaises réponses voulez-vous ?
+			</p>
+			<mat-chip-list>
+  				<mat-chip (click)="changeBadSelected(ind)" [selected]="badSelected[ind]" color="primary" *ngFor="let a of badAnswers; let ind = index">{{ind + 1}}</mat-chip>
+  			</mat-chip-list>
+  			<p>
+			  Cette combinaison va générer {{ nbPossibilities }} questions.
+			</p>
+		</div>
+	</div>
+	<div class="positionButton">
+		<button mat-raised-button (click)="cancel()" color="basic">Annuler l'exportation</button>
+		<button mat-raised-button (click)="confirm()" color="primary">Confirmer</button>
+	</div>
+</div>

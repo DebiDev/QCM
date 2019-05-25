@@ -1,5 +1,5 @@
 /*Main JS Script for Electron (Node.js)*/
-import { app, BrowserWindow, ipcMain, dialog } from "electron";
+import { app, BrowserWindow, ipcMain, dialog, Menu, MenuItem } from "electron";
 import * as path from "path";
 import * as url from "url";
 
@@ -32,6 +32,101 @@ function createWindow() {
     })
   );
 
+  let isMac = process.platform === 'darwin';
+
+  //Creation of a custom menu
+  const template = [];
+  // { role: 'fileMenu' }
+  template.push({
+    label: 'File',
+    submenu: [
+      isMac ? { role: 'close' } : { role: 'quit' }
+    ]
+  });
+  // { role: 'editMenu' }
+  template.push({
+    label: 'Edit',
+    submenu: [
+      { role: 'undo' },
+      { role: 'redo' },
+      { type: 'separator' },
+      { role: 'cut' },
+      { role: 'copy' },
+      { role: 'paste' },
+      ...(isMac ? [
+        { role: 'pasteAndMatchStyle' },
+        { role: 'delete' },
+        { role: 'selectAll' },
+        { type: 'separator' },
+        {
+          label: 'Speech',
+          submenu: [
+            { role: 'startspeaking' },
+            { role: 'stopspeaking' }
+          ]
+        }
+      ] : [
+        { role: 'delete' },
+        { type: 'separator' },
+        { role: 'selectAll' }
+      ])
+    ]
+  });
+  // { role: 'viewMenu' }
+  template.push({
+    label: 'View',
+    submenu: [
+      { role: 'reload' },
+      { role: 'forcereload' },
+      { role: 'toggledevtools' },
+      { type: 'separator' },
+      { role: 'resetzoom' },
+      { role: 'zoomin' },
+      { role: 'zoomout' },
+      { type: 'separator' },
+      { role: 'togglefullscreen' }
+    ]
+  });
+  // { role: 'windowMenu' }
+  template.push({
+    label: 'Window',
+    submenu: [
+      { role: 'minimize' },
+      { role: 'zoom' },
+      ...(isMac ? [
+        { type: 'separator' },
+        { role: 'front' },
+        { type: 'separator' },
+        { role: 'window' }
+      ] : [
+        { role: 'close' }
+      ])
+    ]
+  });
+  // { role: 'helpMenu' }
+  template.push({
+    role: 'help',
+    submenu: [
+      {
+        label: 'Learn More',
+        click: async () => {
+          const { shell } = require('electron')
+          await shell.openExternal('https://electronjs.org')
+        }
+      },
+      {
+        label: 'GitHub Repository',
+        click: async () => {
+          const { shell } = require('electron')
+          await shell.openExternal('https://github.com/DebiDev/QCM')
+        }
+      }
+    ]
+  });
+  
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
+
   //Open DevTools when the software starts
   // win.webContents.openDevTools();
 
@@ -41,6 +136,7 @@ function createWindow() {
     console.log(files);
     win.webContents.send("getFilesResponse", files);
   });
+
 
   /*Window listener to update DB*/
   ipcMain.on("updateFile", (event, arg) => {

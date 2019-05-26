@@ -173,6 +173,13 @@ function createWindow() {
     // win.webContents.openDevTools();
     /*Window listener which send DB file on trigger*/
     electron_1.ipcMain.on("getFiles", function (event, arg) {
+        //Check if the Db exists and create it if not
+        if (!fs.existsSync("DbQCM.json")) {
+            var dbJson = {
+                "qcm": []
+            };
+            fs.writeFileSync("DbQCM.json", JSON.stringify(dbJson, null, 2));
+        }
         var files = JSON.parse(fs.readFileSync("DbQCM.json", "utf8"));
         console.log(files);
         win.webContents.send("getFilesResponse", files);

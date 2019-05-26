@@ -123,7 +123,7 @@ function createWindow() {
       }
     ]
   });
-  
+
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
 
@@ -132,6 +132,14 @@ function createWindow() {
 
   /*Window listener which send DB file on trigger*/
   ipcMain.on("getFiles", (event, arg) => {
+    //Check if the Db exists and create it if not
+    if(!fs.existsSync("DbQCM.json")) {
+      let dbJson = {
+        "qcm": []
+      };
+      
+      fs.writeFileSync("DbQCM.json", JSON.stringify(dbJson, null, 2));
+    }
     const files = JSON.parse(fs.readFileSync("DbQCM.json", "utf8"));
     console.log(files);
     win.webContents.send("getFilesResponse", files);

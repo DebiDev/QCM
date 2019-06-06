@@ -181,7 +181,7 @@ function createWindow() {
             fs.writeFileSync("DbQCM.json", JSON.stringify(dbJson, null, 2));
         }
         var files = JSON.parse(fs.readFileSync("DbQCM.json", "utf8"));
-        console.log(files);
+        //console.log(files);
         win.webContents.send("getFilesResponse", files);
     });
     /*Window listener to update DB*/
@@ -200,23 +200,15 @@ function createWindow() {
                     extensions: ['txt', 'tex']
                 }]
         }, function (filePath) {
-            console.log(filePath);
+            //console.log(filePath);
             var data = fs.readFileSync(filePath[0], "utf8");
-            console.log(data);
+            //console.log(data); 
             win.webContents.send("QCMImported", data);
-            // var rd = readline.createInterface({
-            //     input: fs.createReadStream(filePath),
-            //     output: process.stdout,
-            //     console: false
-            // });
-            // rd.on('line', function(line) {
-            //     console.log(line);
-            // });
         });
     });
     electron_1.ipcMain.on("exportQCM", function (event, arg) {
         var stringContent = arg;
-        console.log(stringContent);
+        //console.log(stringContent);
         electron_1.dialog.showSaveDialog({
             filters: [{
                     name: 'Fichier texte',

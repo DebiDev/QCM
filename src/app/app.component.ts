@@ -463,7 +463,7 @@ export class AppComponent {
     if(item.isMultiple) {
       oneItemStringArray = oneItemStringArray.concat("questionmult}{" + item.id + "} \r\n");
     } else {
-      oneItemStringArray = oneItemStringArray.concat("question} {" + item.id + "} \r\n");
+      oneItemStringArray = oneItemStringArray.concat("question}{" + item.id + "} \r\n");
     }
     oneItemStringArray = oneItemStringArray.concat("\t\t" + item.question + "\r\n \r\n \t\t\\begin{reponses} \r\n");
     for(let answer of item.answers) {

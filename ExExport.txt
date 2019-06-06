@@ -1,0 +1,190 @@
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-10} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \frac{1}{T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = \sinc(\frac{\pi f}{T})$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-11} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \frac{1}{T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\sinc(\frac{\pi f}{T})$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-12} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \frac{1}{T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\indic_{[-T/2,T/2]}(t)$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-13} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\sinc(\frac{\pi f}{T})$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-14} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\indic_{[-T/2,T/2]}(t)$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-15} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\indic_{[-T/2,T/2]}(t)$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-16} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \frac{1}{T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = \sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\sinc(\frac{\pi f}{T})$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-17} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \frac{1}{T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = \sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\indic_{[-T/2,T/2]}(t)$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-18} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \frac{1}{T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\indic_{[-T/2,T/2]}(t)$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+
+%%%%%%%%%%%%
+
+\element{}{ 
+	\begin{question} {Math-19} 
+		La transformée de Fourier de la fonction $r_T(t) = \indic_{[-T/2,T/2]}(t)$ est:
+ 
+ 		\begin{reponses} 
+			\bonne{$R_T(f) = T\sinc(\pi f T)$} 
+
+			\mauvaise{$R_T(f) = \sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\sinc(\frac{\pi f}{T})$} 
+
+			\mauvaise{$R_T(f) = e^{\ic 2 \pi f T}\indic_{[-T/2,T/2]}(t)$} 
+
+		\end{reponses} 
+ 	\end{question} 
+} 
+

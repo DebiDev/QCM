@@ -16,8 +16,11 @@ Pour mieux comprendre, vous pouvez vous rendre ici : https://malcoded.com/posts/
 
 L'application ne marchera pas si vous éxecutez juste un `ng serve`, car Electron ne serait pas inclut. 
 Vous pouvez utiliser la commande `npm run electron` qui lancera l'application après avoir compilé le code.
-Pour déployer le logiciel, exécutez la commande `electron-forge make` (déploie l'application sous l'OS détecté),
-vous trouverez alors l'éxecutable dans le dossier /out/make/$EXECUTABLE
+Pour déployer le logiciel, installez le cli suivant `npm install electron-packager -g` puis éxécutez`npm run` : 
+	-`package-mac` sous Mac
+	-`package-win` sous Windows
+	-`package-linux` sous Linux
+Vous trouverez les fichiers de sortie dans /release-builds/$REPERTORY
 
 #########################################################################################
 

@@ -8,11 +8,11 @@
 	        <mat-label>Identifiant de la question</mat-label>
 	        <textarea matInput [(ngModel)]="q.id"></textarea>
 	    </mat-form-field>
-	    <mat-form-field *ngIf="arrayModif[i]" floatLabel="always">
+	    <mat-form-field floatLabel="always">
           <mat-label>Thème de la question :</mat-label>
-          <input matInput [(ngModel)]="q.theme">
+          <input matInput [matAutocomplete]="auto" [(ngModel)]="q.theme">
           <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let t of arrayModif" [value]="t">
+            <mat-option *ngFor="let t of themesArray" [value]="t">
               {{t}}
             </mat-option>
           </mat-autocomplete>

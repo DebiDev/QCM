@@ -165,6 +165,9 @@ function createWindow() {
         extensions: ['txt', 'tex']
       }]
     }, (filePath) => {
+      if(!filePath) {
+        return; 
+      }
       //console.log(filePath);
       let data = fs.readFileSync(filePath[0], "utf8");
       //console.log(data); 

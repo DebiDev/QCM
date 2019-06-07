@@ -1,6 +1,7 @@
 {
-  "name": "qcm",
-  "version": "0.0.0",
+  "name": "qcm_gestion",
+  "version": "1.0.0",
+  "productName": "QCM Gestion",
   "main": "electron/dist/main.js",
   "description": "Gestion de QCM avancée",
   "scripts": {
@@ -13,7 +14,10 @@
     "electron": "ng build --base-href ./ && tsc --p electron && electron .",
     "forge-start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=/assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . qcm_gestion --overwrite --asar --platform=win32 --arch=ia32 --icon=/assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"QCM Gestion\"",    
+    "package-linux": "electron-packager . qcm_gestion --overwrite --asar --platform=linux --arch=x64 --icon=/assets/icons/png/512x512.png --prune=true --out=release-builds"
   },
   "config": {
     "forge": {
@@ -82,6 +86,7 @@
     "clean-css": "^4.2.1",
     "codelyzer": "~4.5.0",
     "electron": "^4.2.4",
+    "electron-packager": "^13.1.1",
     "electron-prebuilt-compile": "4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",

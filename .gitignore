@@ -4,11 +4,11 @@
 /dist
 /tmp
 /out-tsc
+/release-builds
 
 # dependencies
 /node_modules
 out
-release-builds
 
 # profiling files
 chrome-profiler-events.json

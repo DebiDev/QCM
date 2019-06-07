@@ -20,7 +20,7 @@ Pour déployer le logiciel, installez le cli suivant `npm install electron-packa
 	-`package-mac` sous Mac
 	-`package-win` sous Windows
 	-`package-linux` sous Linux
-Vous trouverez les fichiers de sortie dans /release-builds/$REPERTORY
+Vous trouverez les fichiers de sortie dans /release-builds/$REPERTORY (You can refer to https://www.christianengvall.se/electron-packager-tutorial/ )
 
 #########################################################################################
 

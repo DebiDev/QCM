@@ -10,6 +10,7 @@ import { CancelExportationBottomSheetComponent } from './pages/cancel-exportatio
 import { ImportDialogComponent } from './pages/import-dialog/import-dialog.component';
 import { ExportDialogComponent } from './pages/export-dialog/export-dialog.component';
 import { ExportTagDialogComponent } from './pages/export-tag-dialog/export-tag-dialog.component';
+import { DeleteTabDialogComponent } from './pages/delete-tab-dialog/delete-tab-dialog.component';
 
 
 @Component({
@@ -71,21 +72,21 @@ export class AppComponent {
     }
   	let dialogRef = this.dialog.open(CreateDialogComponent, dialogConfig);
 
-  		//When the modal is closed
- 	dialogRef.afterClosed().subscribe( action => {
- 		//If it's not empty, we push it and we update the DB
- 		if(action.question) {
- 			this.qcmContainer.qcm.push(action.question);
- 			//We update the DB with our service
-  			this.file.updateJSON(this.qcmContainer).then(() => {
-          //console.log("JSON updated")
-        });
- 		}
+  	//When the modal is closed
+   	dialogRef.afterClosed().subscribe( action => {
+   		//If it's not empty, we push it and we update the DB
+   		if(action.question) {
+   			this.qcmContainer.qcm.push(action.question);
+   			//We update the DB with our service
+    			this.file.updateJSON(this.qcmContainer).then(() => {
+            //console.log("JSON updated")
+          });
+   		}
 
-    if(action.themesArray) {
-      this.themesArray = action.themesArray;
-    }
- 	});
+      if(action.themesArray) {
+        this.themesArray = action.themesArray;
+      }
+   	});
   }
 
   //Starting modification of one QCM
@@ -98,6 +99,29 @@ export class AppComponent {
   bindTheme(value:string) {
     //console.log(value.trim());
     this.themeInput = value.trim();
+  }
+
+  //Delete all question in the selected theme
+  deleteTab(themeName) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      theme: themeName,
+      nbQuestions: this.qcmContainer.qcm.filter(question => question.theme == themeName).length,
+    }
+    let dialogRef = this.dialog.open(DeleteTabDialogComponent, dialogConfig);
+
+    //When the modal is closed
+     dialogRef.afterClosed().subscribe( action => {
+       //If it's not empty, we push it and we update the DB
+       if(action) {
+         this.qcmContainer.qcm = this.qcmContainer.qcm.filter(question => question.theme != themeName);
+         this.themesArray = Array.from(new Set(this.qcmContainer.qcm.map(q => q.theme))).sort();
+         //We update the DB with our service
+         // this.file.updateJSON(this.qcmContainer).then(() => {
+         //  //console.log("JSON updated")
+         // });
+       }
+     });
   }
 
   //Cancel modification

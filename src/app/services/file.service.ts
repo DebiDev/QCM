@@ -42,7 +42,12 @@ export class FileService {
       this.ipc.once("QCMImported", (event, arg) => {
         let text = arg;
         let doc = text.split("\\begin{document}");
-        resolve(doc[1]);
+        if(doc.length = 2) {
+          resolve(doc[1]);
+        } else {
+          resolve(doc[0]);
+        }
+        
       });
       this.ipc.send("importQCM");
     });

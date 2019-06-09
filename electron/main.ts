@@ -161,11 +161,12 @@ function createWindow() {
     dialog.showOpenDialog({ 
       properties: ['openFile'],
       filters: [{
-        name: 'Fichier texte',
+        name: 'Fichier Texte/Latex',
         extensions: ['txt', 'tex']
       }]
     }, (filePath) => {
       if(!filePath) {
+        console.warn("Vous n'avez sélectionné aucun fichier");
         return; 
       }
       //console.log(filePath);
@@ -180,12 +181,16 @@ function createWindow() {
     //console.log(stringContent);
     dialog.showSaveDialog({
       filters: [{
-        name: 'Fichier texte',
+        name: 'Fichier Latex',
+        extensions: ['tex']
+      },
+      {
+        name: 'Fichier Texte',
         extensions: ['txt']
       }]
     },(fileName) => {
       if (fileName === undefined){
-          console.log("You didn't save the file");
+          console.warn("You didn't save the file");
           return;
       }
       

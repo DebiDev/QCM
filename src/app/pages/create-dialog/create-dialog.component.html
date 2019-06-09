@@ -20,7 +20,7 @@
 		<p>Prévisualisation de la question (Latex) :</p>
 		<mathjax [content]='q.question'></mathjax>
 		<mat-form-field floatLabel="always">
-	        <mat-label>Modifier la question</mat-label>
+	        <mat-label>Intitulé de la question</mat-label>
 	        <textarea matInput 
 	          cdkTextareaAutosize 
 	          #autosize="cdkTextareaAutosize" 
@@ -57,11 +57,11 @@
 	      <mat-checkbox [(ngModel)]="ans.correct">Réponse correcte</mat-checkbox>
 	      <button *ngIf="q.answers.length > 1" mat-raised-button (click)="deleteQuestion(ind)" color="warn">Supprimer cette réponse</button>
 	    </div>
-	    <div class="centeringContent">
-		    <button mat-raised-button (click)="addQuestion()" color="basic">
-		    	<mat-icon>add_box</mat-icon>
-		    </button>
-		</div>
+	</div>
+	<div class="centeringContent">
+	    <button mat-raised-button (click)="addQuestion()" color="basic">
+	    	<mat-icon>add_box</mat-icon>
+	    </button>
 	</div>
 	<mat-divider></mat-divider>
 	<div class="positionButton">

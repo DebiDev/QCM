@@ -36,6 +36,7 @@ import { CancelExportationBottomSheetComponent } from './pages/cancel-exportatio
 import { ImportDialogComponent } from './pages/import-dialog/import-dialog.component';
 import { ExportDialogComponent } from './pages/export-dialog/export-dialog.component';
 import { ExportTagDialogComponent } from './pages/export-tag-dialog/export-tag-dialog.component';
+import { DeleteTabDialogComponent } from './pages/delete-tab-dialog/delete-tab-dialog.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ExportTagDialogComponent } from './pages/export-tag-dialog/export-tag-d
     CancelExportationBottomSheetComponent,
     ImportDialogComponent,
     ExportDialogComponent,
-    ExportTagDialogComponent
+    ExportTagDialogComponent,
+    DeleteTabDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,8 @@ import { ExportTagDialogComponent } from './pages/export-tag-dialog/export-tag-d
     CancelExportationBottomSheetComponent,
     ImportDialogComponent,
     ExportDialogComponent,
-    ExportTagDialogComponent],
+    ExportTagDialogComponent,
+    DeleteTabDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

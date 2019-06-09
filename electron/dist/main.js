@@ -196,10 +196,14 @@ function createWindow() {
         electron_1.dialog.showOpenDialog({
             properties: ['openFile'],
             filters: [{
-                    name: 'Fichier texte',
+                    name: 'Fichier Texte/Latex',
                     extensions: ['txt', 'tex']
                 }]
         }, function (filePath) {
+            if (!filePath) {
+                console.warn("Vous n'avez sélectionné aucun fichier");
+                return;
+            }
             //console.log(filePath);
             var data = fs.readFileSync(filePath[0], "utf8");
             //console.log(data); 
@@ -211,12 +215,16 @@ function createWindow() {
         //console.log(stringContent);
         electron_1.dialog.showSaveDialog({
             filters: [{
-                    name: 'Fichier texte',
+                    name: 'Fichier Latex',
+                    extensions: ['tex']
+                },
+                {
+                    name: 'Fichier Texte',
                     extensions: ['txt']
                 }]
         }, function (fileName) {
             if (fileName === undefined) {
-                console.log("You didn't save the file");
+                console.warn("You didn't save the file");
                 return;
             }
             // fileName is a string that contains the path and filename created in the save file dialog.  

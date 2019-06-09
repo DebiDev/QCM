@@ -9,8 +9,12 @@
         <button mat-raised-button [disabled]="exportMode" (click)="newQuestion()" color="primary">Ajouter une question</button>
       </mat-toolbar-row>
     </mat-toolbar>
-    <mat-tab-group >
-      <mat-tab *ngFor="let theme of themesArray" label="{{theme ? theme : 'Non classé'}}">
+    <mat-tab-group>
+      <mat-tab *ngFor="let theme of themesArray">
+        <ng-template mat-tab-label>
+          {{theme ? theme : 'Non classé'}}
+          <mat-icon class="deleteTabButton" (click)="deleteTab(theme)">clear</mat-icon>
+        </ng-template>
         <div scrollY="true" 
               class="scroll" 
               cdkDropList
